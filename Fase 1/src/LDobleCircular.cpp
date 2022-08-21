@@ -1,4 +1,5 @@
 #include "LDobleCircular.h"
+#include"Usuarios.h"
 
 void LDobleCircular::insert(string data){
     NodoLDobleCircular *nuevo = new NodoLDobleCircular(data);

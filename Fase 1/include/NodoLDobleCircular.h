@@ -4,6 +4,8 @@
 #include<iostream>
 #include<string>
 
+#include"Usuarios.h"
+
 using namespace std;
 
 class NodoLDobleCircular
