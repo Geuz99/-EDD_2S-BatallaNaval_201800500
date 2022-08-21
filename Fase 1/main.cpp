@@ -1,8 +1,13 @@
 #include<iostream>
+#include<fstream>
+#include<nlohmann/json.hpp>
+#include<string>
 
 #include"LDobleCircular.h"
 
 using namespace std;
+using namespace nlohmann;
+
 
 int main(int argc, char const *argv[])
 {
@@ -25,11 +30,17 @@ int main(int argc, char const *argv[])
         switch (opc)
         {
         case 1:
-            lista->insert("Messi");
+            {
+            ifstream archivo("C:/Users/GEUZ99/Downloads/ejemplo1.json");
+            nlohmann::json  dato= nlohmann::json::parse(archivo);
+            for(int i=0;i<dato["usuarios"].size();i++){
+                cout<<"nick:  "<<dato["usuarios"][i]["nick"].get<string>()<<endl;
+                cout<<"pass:  "<<dato["usuarios"][i]["password"].get<string>()<<endl;
+            }
             break;
-
+            }
         case 2:
-            lista->imprimir();
+            cout<<"Login"<<endl;
             break;
 
         case 3:

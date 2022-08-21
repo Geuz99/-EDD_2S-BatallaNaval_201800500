@@ -25,7 +25,6 @@ void LDobleCircular::imprimir(){
         cout<<"<-->NULL<-->"<<endl;
     }else{
         NodoLDobleCircular *aux = head;
-        cout<<"<--> Inicio";
         do
         {
             cout<<" <--> "<<aux->data;
