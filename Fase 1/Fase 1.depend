@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1661072109 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
+	<iostream>
+
+1661072484 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
+	"LDobleCircular.h"
+
+1661072351 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
+	<stddef.h>
+	<iostream>
+	"NodoLDobleCircular.h"
+
+1661072484 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoldoblecircular.h
+	<iostream>
+	<string>
+
+1661072556 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoldoblecircular.cpp
+	"NodoLDobleCircular.h"
+

@@ -1,11 +1,14 @@
 #include<iostream>
 
+#include"LDobleCircular.h"
+
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
 
     int opc = 0;
+    LDobleCircular *lista = new LDobleCircular();
 
     do
     {
@@ -22,11 +25,11 @@ int main(int argc, char const *argv[])
         switch (opc)
         {
         case 1:
-
+            lista->insert("Messi");
             break;
 
         case 2:
-            cout<<"hola";
+            lista->imprimir();
             break;
 
         case 3:
