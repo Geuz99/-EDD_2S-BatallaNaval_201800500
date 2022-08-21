@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,55 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/LDobleCircular.h" />
+		<Unit filename="include/NodoLDobleCircular.h" />
+		<Unit filename="include/nlohmann/adl_serializer.hpp" />
+		<Unit filename="include/nlohmann/byte_container_with_subtype.hpp" />
+		<Unit filename="include/nlohmann/detail/abi_macros.hpp" />
+		<Unit filename="include/nlohmann/detail/conversions/from_json.hpp" />
+		<Unit filename="include/nlohmann/detail/conversions/to_chars.hpp" />
+		<Unit filename="include/nlohmann/detail/conversions/to_json.hpp" />
+		<Unit filename="include/nlohmann/detail/exceptions.hpp" />
+		<Unit filename="include/nlohmann/detail/hash.hpp" />
+		<Unit filename="include/nlohmann/detail/input/binary_reader.hpp" />
+		<Unit filename="include/nlohmann/detail/input/input_adapters.hpp" />
+		<Unit filename="include/nlohmann/detail/input/json_sax.hpp" />
+		<Unit filename="include/nlohmann/detail/input/lexer.hpp" />
+		<Unit filename="include/nlohmann/detail/input/parser.hpp" />
+		<Unit filename="include/nlohmann/detail/input/position_t.hpp" />
+		<Unit filename="include/nlohmann/detail/iterators/internal_iterator.hpp" />
+		<Unit filename="include/nlohmann/detail/iterators/iter_impl.hpp" />
+		<Unit filename="include/nlohmann/detail/iterators/iteration_proxy.hpp" />
+		<Unit filename="include/nlohmann/detail/iterators/iterator_traits.hpp" />
+		<Unit filename="include/nlohmann/detail/iterators/json_reverse_iterator.hpp" />
+		<Unit filename="include/nlohmann/detail/iterators/primitive_iterator.hpp" />
+		<Unit filename="include/nlohmann/detail/json_pointer.hpp" />
+		<Unit filename="include/nlohmann/detail/json_ref.hpp" />
+		<Unit filename="include/nlohmann/detail/macro_scope.hpp" />
+		<Unit filename="include/nlohmann/detail/macro_unscope.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/call_std/begin.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/call_std/end.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/cpp_future.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/detected.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/identity_tag.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/is_sax.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/std_fs.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/type_traits.hpp" />
+		<Unit filename="include/nlohmann/detail/meta/void_t.hpp" />
+		<Unit filename="include/nlohmann/detail/output/binary_writer.hpp" />
+		<Unit filename="include/nlohmann/detail/output/output_adapters.hpp" />
+		<Unit filename="include/nlohmann/detail/output/serializer.hpp" />
+		<Unit filename="include/nlohmann/detail/string_concat.hpp" />
+		<Unit filename="include/nlohmann/detail/string_escape.hpp" />
+		<Unit filename="include/nlohmann/detail/value_t.hpp" />
+		<Unit filename="include/nlohmann/json.hpp" />
+		<Unit filename="include/nlohmann/json_fwd.hpp" />
+		<Unit filename="include/nlohmann/ordered_map.hpp" />
+		<Unit filename="include/nlohmann/thirdparty/hedley/hedley.hpp" />
+		<Unit filename="include/nlohmann/thirdparty/hedley/hedley_undef.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/LDobleCircular.cpp" />
+		<Unit filename="src/NodoLDobleCircular.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
