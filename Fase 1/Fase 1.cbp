@@ -36,6 +36,8 @@
 		</Compiler>
 		<Unit filename="include/LDobleCircular.h" />
 		<Unit filename="include/NodoLDobleCircular.h" />
+		<Unit filename="include/listaInterna.h" />
+		<Unit filename="include/listaPrincipal.h" />
 		<Unit filename="include/nlohmann/adl_serializer.hpp" />
 		<Unit filename="include/nlohmann/byte_container_with_subtype.hpp" />
 		<Unit filename="include/nlohmann/detail/abi_macros.hpp" />
@@ -80,9 +82,15 @@
 		<Unit filename="include/nlohmann/ordered_map.hpp" />
 		<Unit filename="include/nlohmann/thirdparty/hedley/hedley.hpp" />
 		<Unit filename="include/nlohmann/thirdparty/hedley/hedley_undef.hpp" />
+		<Unit filename="include/nodoInterno.h" />
+		<Unit filename="include/nodoPrincipal.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/LDobleCircular.cpp" />
 		<Unit filename="src/NodoLDobleCircular.cpp" />
+		<Unit filename="src/listaInterna.cpp" />
+		<Unit filename="src/listaPrincipal.cpp" />
+		<Unit filename="src/nodoInterno.cpp" />
+		<Unit filename="src/nodoPrincipal.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

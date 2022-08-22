@@ -4,6 +4,8 @@
 #include<string>
 
 #include"LDobleCircular.h"
+#include"ListaInterna.h"
+#include"ListaPrincipal.h"
 
 using namespace std;
 using namespace nlohmann;
@@ -13,7 +15,8 @@ int main(int argc, char const *argv[])
 {
 
     int opc = 0;
-    LDobleCircular *lista = new LDobleCircular();
+    LDobleCircular lista;
+    ListaPrincipal pruebas;
 
     do
     {
@@ -34,7 +37,7 @@ int main(int argc, char const *argv[])
                 ifstream archivo("C:/Users/GEUZ99/Downloads/prueba.json");
                 json dato = json::parse(archivo);
                 for(int i=0;i<dato["usuarios"].size();i++){
-                    lista->insert(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
+                    lista.insert(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
                     //lista->insert(dato["usuarios"][i]["nick"].get<string>());
                     /*cout<<"nick:  "<<dato["usuarios"][i]["nick"].get<string>()<<endl;
                     cout<<"pass:  "<<dato["usuarios"][i]["password"].get<string>()<<endl;
@@ -47,13 +50,22 @@ int main(int argc, char const *argv[])
                     cout<<"precio:  "<<dato["articulos"][i]["precio"].get<string>()<<endl;
                     cout<<"nombre:  "<<dato["articulos"][i]["nombre"].get<string>()<<endl;
                     cout<<"src:  "<<dato["articulos"][i]["src"].get<string>()<<endl;*/
-                lista->imprimir();
+                lista.imprimir();
                 }
             break;
-        case 2:
-            cout<<"Login"<<endl;
-            break;
 
+        case 2:
+            pruebas.Insertar(1,1);
+            pruebas.Insertar(2,1);
+            pruebas.Insertar(3,1);
+
+            pruebas.Insertar(1,2);
+            pruebas.Insertar(2,2);
+            pruebas.Insertar(3,2);
+
+            pruebas.Imprimir();
+
+            break;
         case 3:
             cout<<"Login"<<endl;
             break;
