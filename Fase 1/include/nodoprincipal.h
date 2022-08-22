@@ -2,8 +2,11 @@
 #define NODOPRINCIPAL_H
 
 #include <stddef.h>
+#include <string>
 
 #include "ListaInterna.h"
+
+using namespace std;
 
 
 class nodoprincipal
@@ -11,13 +14,13 @@ class nodoprincipal
     public:
     //----valores
     ListaInterna listainterna;
-    int valor;
+    string valor;
     //----apuntadores
     nodoprincipal*sig;
 
     nodoprincipal() {
         sig = NULL;
-        valor = 0;
+        valor = "";
     }
     private:
 };

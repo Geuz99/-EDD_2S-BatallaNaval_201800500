@@ -55,13 +55,13 @@ int main(int argc, char const *argv[])
             break;
 
         case 2:
-            pruebas.Insertar(1,1);
-            pruebas.Insertar(2,1);
-            pruebas.Insertar(3,1);
+            pruebas.Insertar("1", "10", "carro1", "carro1.png", "Epico");
+            pruebas.Insertar("2", "100", "carro2", "carro2.png", "Epico");
+            pruebas.Insertar("3", "1000", "carro3", "carro3.png", "Epico");
 
-            pruebas.Insertar(1,2);
-            pruebas.Insertar(2,2);
-            pruebas.Insertar(3,2);
+            pruebas.Insertar("1", "10", "moto1", "moto1.png", "Raro");
+            pruebas.Insertar("2", "100", "moto2", "moto2.png", "Raro");
+            pruebas.Insertar("3", "1000", "moto3", "moto3.png", "Raro");
 
             pruebas.Imprimir();
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1661187465 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
+1661193356 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
 	<iostream>
 	<fstream>
 	<nlohmann/json.hpp>
@@ -462,28 +462,33 @@
 1661185245 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoprincipal.cpp
 	"nodoprincipal.h"
 
-1661185322 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoprincipal.h
+1661192900 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoprincipal.h
 	<stddef.h>
+	<string>
 	"ListaInterna.h"
 
-1661190034 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listainterna.cpp
+1661193094 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listainterna.cpp
 	"ListaInterna.h"
+	<string>
 
-1661185975 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listainterna.h
+1661192999 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listainterna.h
 	"nodointerno.h"
 	<iostream>
+	<string>
 
-1661185391 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodointerno.h
+1661192895 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodointerno.h
 	<stddef.h>
+	<string>
 
 1661185341 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodointerno.cpp
 	"nodointerno.h"
 
-1661185708 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listaprincipal.h
+1661192121 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listaprincipal.h
 	<iostream>
+	<string>
 	"nodoprincipal.h"
 
-1661189973 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listaprincipal.cpp
+1661193179 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listaprincipal.cpp
 	"ListaPrincipal.h"
 	<string>
 	<iostream>

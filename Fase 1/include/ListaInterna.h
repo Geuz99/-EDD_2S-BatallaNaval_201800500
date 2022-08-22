@@ -4,6 +4,7 @@
 #include"nodointerno.h"
 
 #include <iostream>
+#include<string>
 
 using namespace std;
 
@@ -16,8 +17,8 @@ class ListaInterna
     ListaInterna() {
         Inicio = NULL;
     }
-    void InsertarFinal(int valor);
-    void InsertarEnOrden(int valor);
+    void InsertarFinal(string id, string precio, string nombre, string src);
+    //void InsertarEnOrden(string id, string precio, string nombre, string src);
     void Imprimir();
 
     private:

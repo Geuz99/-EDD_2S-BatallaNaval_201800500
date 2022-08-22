@@ -2,33 +2,35 @@
 #include <string>
 #include <iostream>
 
+using namespace std;
+
 void ListaPrincipal::Imprimir() {
     nodoprincipal*aux = Inicio;
     while (aux != NULL) {
         cout << "[" << aux->valor << "]->";
         nodointerno * auxI = aux->listainterna.Inicio;
         while (auxI != NULL) {
-            cout << "[" << auxI->valor << "]->";
+            cout << "[" << auxI->nombre << "]->";
             auxI = auxI->sig;
         }
-        cout << ("NULL");
-        cout << ("\n | ");
+        cout << ("NULL")<<endl;
+        //cout << ("\n | ");
         aux = aux->sig;
     }
-    cout << ("NULL");
+    cout << ("NULL")<<endl;
 }
 
-void ListaPrincipal::Insertar(int valor, int categoria) {
+void ListaPrincipal::Insertar(string id, string precio, string nombre, string src, string categoria) {
     if (Inicio == NULL) {//lista se encuentra vacia
         nodoprincipal*nuevo = new nodoprincipal();
         nuevo->valor = categoria;
-        nuevo->listainterna.InsertarEnOrden(valor);
+        nuevo->listainterna.InsertarFinal(id, precio, nombre, src); //
         Inicio = nuevo;
     } else {//la lista no se encuentra vacia
         nodoprincipal*busqueda = BuscarPrincipal(Inicio, categoria);
         nodoprincipal*nuevo = new nodoprincipal();
         nuevo->valor = categoria;
-        nuevo->listainterna.InsertarEnOrden(valor);
+        nuevo->listainterna.InsertarFinal(id, precio, nombre, src);
         if (busqueda == NULL) {//como no hay categoria insertamos al final una nueva
             nodoprincipal*auxActual = Inicio;
             while (auxActual != NULL) {
@@ -39,7 +41,7 @@ void ListaPrincipal::Insertar(int valor, int categoria) {
                 auxActual = auxActual->sig;
             }
         } else {//si la categoria existe se inserta en la misma
-            busqueda->listainterna.InsertarEnOrden(valor);
+            busqueda->listainterna.InsertarFinal(id, precio, nombre, src);
         }
     }
 
@@ -47,7 +49,7 @@ void ListaPrincipal::Insertar(int valor, int categoria) {
 
 }
 
-nodoprincipal* ListaPrincipal::BuscarPrincipal(nodoprincipal* inicioL, int categoria) {
+nodoprincipal* ListaPrincipal::BuscarPrincipal(nodoprincipal* inicioL, string categoria) {
     if (inicioL == NULL) {
         return inicioL;
     } else {

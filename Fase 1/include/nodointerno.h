@@ -2,16 +2,24 @@
 #define NODOINTERNO_H
 
 #include <stddef.h>
+#include<string>
 
+using namespace std;
 
 class nodointerno
 {
     public:
-        int valor;
+        string id;
+        string precio;
+        string nombre;
+        string src;
         nodointerno*sig;
         nodosimple() {
         sig = NULL;
-        valor = 0;
+        id = "";
+        precio = "";
+        nombre = "";
+        src = "";
     }
     private:
 };

@@ -2,6 +2,7 @@
 #define LISTAPRINCIPAL_H
 
 #include <iostream>
+#include<string>
 
 #include "nodoprincipal.h"
 
@@ -18,8 +19,8 @@ class ListaPrincipal
         }
         void Imprimir();
         void GenerarGrafo();
-        void Insertar(int valor, int categoria);
-        nodoprincipal * BuscarPrincipal(nodoprincipal*inicioL, int categoria);
+        void Insertar(string id, string precio, string nombre, string src, string categoria);
+        nodoprincipal * BuscarPrincipal(nodoprincipal*inicioL, string categoria);
 
     private:
 };

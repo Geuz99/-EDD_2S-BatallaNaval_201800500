@@ -1,8 +1,14 @@
 #include "ListaInterna.h"
+#include<string>
 
-void ListaInterna::InsertarFinal(int valor) {
+using namespace std;
+
+void ListaInterna::InsertarFinal(string id, string precio, string nombre, string src) {
     nodointerno*nuevo = new nodointerno();
-    nuevo->valor = valor;
+    nuevo->id = id;
+    nuevo->precio = precio;
+    nuevo->nombre = nombre;
+    nuevo->src = src;
 
     if (Inicio == NULL) {
         Inicio = nuevo;
@@ -21,9 +27,12 @@ void ListaInterna::InsertarFinal(int valor) {
 
 }
 
-void ListaInterna::InsertarEnOrden(int valor) {
+/*void ListaInterna::InsertarEnOrden(string id, string precio, string nombre, string src) {
     nodointerno*nuevo = new nodointerno();
-    nuevo->valor = valor;
+    nuevo->id = id;
+    nuevo->precio = precio;
+    nuevo->nombre = nombre;
+    nuevo->src = src;
     if (Inicio == NULL) {//Si la lista se encuentra vacia
         Inicio = nuevo;
     } else {//si la lista no esta vacia
@@ -46,13 +55,13 @@ void ListaInterna::InsertarEnOrden(int valor) {
             auxActual = auxActual->sig;
         }
     }
-}
+}*/
 
 
 void ListaInterna::Imprimir() {
     nodointerno*aux = Inicio;
     while (aux != NULL) {
-        cout <<"[" << aux->valor << "]->";
+        cout <<"[" << aux->nombre << "]->";
         aux = aux->sig;
     }
     cout << ("NULL");
