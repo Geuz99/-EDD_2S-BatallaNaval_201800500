@@ -34,7 +34,7 @@ void LDobleCircular::imprimir(){
             cout<<" <--> "<<aux->nick;
             aux = aux->next;
         } while (aux != head);
-        cout<<aux->next->nick<<endl;
+        cout<<" <--> "<<aux->nick<<endl;
     }
 
 
