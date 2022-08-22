@@ -19,7 +19,7 @@ class LDobleCircular
             this->head = NULL;
             this->end = NULL;
         }
-        void insert(string);
+        void insert(string nick, string password, string monedas, string edad);
         void imprimir();
 
 

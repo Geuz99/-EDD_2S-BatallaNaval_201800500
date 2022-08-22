@@ -4,21 +4,25 @@
 #include<iostream>
 #include<string>
 
-#include"Usuarios.h"
-
 using namespace std;
 
 class NodoLDobleCircular
 {
     public:
-        string data;
+        string nick;
+        string password;
+        string monedas;
+        string edad;
         NodoLDobleCircular *next;
         NodoLDobleCircular *prev;
 
-        NodoLDobleCircular(string _data){
+        NodoLDobleCircular(string _nick, string _password, string _monedas, string _edad){
             this ->next = NULL;
             this ->prev = NULL;
-            this ->data = _data;
+            this ->nick = _nick;
+            this ->password = _password;
+            this ->monedas = _monedas;
+            this ->edad = _edad;
         }
 
     protected:

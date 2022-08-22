@@ -1,0 +1,11 @@
+#include "NodoInterno."
+
+NodoInterno::NodoInterno()
+{
+    //ctor
+}
+
+NodoInterno::~NodoInterno()
+{
+    //dtor
+}

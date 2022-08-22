@@ -1,8 +1,11 @@
 #include "LDobleCircular.h"
-#include"Usuarios.h"
 
-void LDobleCircular::insert(string data){
-    NodoLDobleCircular *nuevo = new NodoLDobleCircular(data);
+#include<string>
+
+using namespace std;
+
+void LDobleCircular::insert(string nick, string password, string monedas, string edad){
+    NodoLDobleCircular *nuevo = new NodoLDobleCircular(nick, password, monedas, edad);
     if ((head==NULL) && (end==NULL)){
         head = nuevo;
         end = nuevo;
@@ -28,10 +31,10 @@ void LDobleCircular::imprimir(){
         NodoLDobleCircular *aux = head;
         do
         {
-            cout<<" <--> "<<aux->data;
+            cout<<" <--> "<<aux->nick;
             aux = aux->next;
         } while (aux != head);
-        cout<<" <-->NULL<-->";
+        cout<<aux->next->nick<<endl;
     }
 
 

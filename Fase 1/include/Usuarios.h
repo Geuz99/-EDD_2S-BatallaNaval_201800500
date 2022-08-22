@@ -23,6 +23,8 @@ class Usuarios
             this->edad = _edad;
         }
 
+        virtual ~Usuarios();
+
 
     protected:
 

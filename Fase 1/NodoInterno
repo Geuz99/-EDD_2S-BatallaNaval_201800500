@@ -1,0 +1,16 @@
+#ifndef NODOINTERNO_
+#define NODOINTERNO_
+
+
+class NodoInterno
+{
+    public:
+        NodoInterno();
+        virtual ~NodoInterno();
+
+    protected:
+
+    private:
+};
+
+#endif // NODOINTERNO_

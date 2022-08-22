@@ -6,19 +6,18 @@
 	<string>
 	"LDobleCircular.h"
 
-1661113737 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
+1661127358 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
 	"LDobleCircular.h"
-	"Usuarios.h"
+	<string>
 
-1661113737 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
+1661127315 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
 	<stddef.h>
 	<iostream>
 	"NodoLDobleCircular.h"
 
-1661113737 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoldoblecircular.h
+1661127315 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoldoblecircular.h
 	<iostream>
 	<string>
-	"Usuarios.h"
 
 1661072556 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoldoblecircular.cpp
 	"NodoLDobleCircular.h"
@@ -450,11 +449,17 @@
 
 1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\thirdparty\hedley\hedley_undef.hpp
 
-1661111022 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\usuarios.h
+1661125447 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\usuarios.h
 	<stddef.h>
 	<iostream>
 	<string>
 
 1661110890 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\usuarios.cpp
 	"Usuarios.h"
+
+1661125138 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoprincipal.cpp
+	"NodoPrincipal.h"
+
+1661125823 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoprincipal.h
+	<stddef.h>
 

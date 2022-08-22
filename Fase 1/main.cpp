@@ -34,9 +34,8 @@ int main(int argc, char const *argv[])
                 ifstream archivo("C:/Users/GEUZ99/Downloads/prueba.json");
                 json dato = json::parse(archivo);
                 for(int i=0;i<dato["usuarios"].size();i++){
-                    lista->insert(dato["usuarios"][i]["nick"].get<string>());
-                    cout<<dato["usuarios"][i]["nick"].get<string>();
-                    //lista->insert(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
+                    lista->insert(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
+                    //lista->insert(dato["usuarios"][i]["nick"].get<string>());
                     /*cout<<"nick:  "<<dato["usuarios"][i]["nick"].get<string>()<<endl;
                     cout<<"pass:  "<<dato["usuarios"][i]["password"].get<string>()<<endl;
                     cout<<"monedas:  "<<dato["usuarios"][i]["monedas"].get<string>()<<endl;
@@ -63,8 +62,12 @@ int main(int argc, char const *argv[])
             cout<<"Reportes"<<endl;
             break;
 
+        case 5:
+            cout<<"***************************************************************"<<endl;
+            break;
+
         default:
-            cout<<"Ingresa una opción correcta"<<endl;
+            cout<<"Ingresa una opcion correcta"<<endl;
             cout<<" ";
             break;
         }
