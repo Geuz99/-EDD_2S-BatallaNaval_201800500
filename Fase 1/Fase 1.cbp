@@ -34,10 +34,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Cola.h" />
 		<Unit filename="include/LDobleCircular.h" />
+		<Unit filename="include/ListaInterna.h" />
+		<Unit filename="include/ListaPrincipal.h" />
+		<Unit filename="include/NodoCola.h" />
 		<Unit filename="include/NodoLDobleCircular.h" />
-		<Unit filename="include/listaInterna.h" />
-		<Unit filename="include/listaPrincipal.h" />
 		<Unit filename="include/nlohmann/adl_serializer.hpp" />
 		<Unit filename="include/nlohmann/byte_container_with_subtype.hpp" />
 		<Unit filename="include/nlohmann/detail/abi_macros.hpp" />
@@ -82,15 +84,17 @@
 		<Unit filename="include/nlohmann/ordered_map.hpp" />
 		<Unit filename="include/nlohmann/thirdparty/hedley/hedley.hpp" />
 		<Unit filename="include/nlohmann/thirdparty/hedley/hedley_undef.hpp" />
-		<Unit filename="include/nodoInterno.h" />
-		<Unit filename="include/nodoPrincipal.h" />
+		<Unit filename="include/nodointerno.h" />
+		<Unit filename="include/nodoprincipal.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Cola.cpp" />
 		<Unit filename="src/LDobleCircular.cpp" />
+		<Unit filename="src/ListaInterna.cpp" />
+		<Unit filename="src/ListaPrincipal.cpp" />
+		<Unit filename="src/NodoCola.cpp" />
 		<Unit filename="src/NodoLDobleCircular.cpp" />
-		<Unit filename="src/listaInterna.cpp" />
-		<Unit filename="src/listaPrincipal.cpp" />
-		<Unit filename="src/nodoInterno.cpp" />
-		<Unit filename="src/nodoPrincipal.cpp" />
+		<Unit filename="src/nodointerno.cpp" />
+		<Unit filename="src/nodoprincipal.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

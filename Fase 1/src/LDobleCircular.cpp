@@ -36,7 +36,44 @@ void LDobleCircular::imprimir(){
         } while (aux != head);
         cout<<" <--> "<<aux->nick<<endl;
     }
+}
 
+void LDobleCircular::editar(string nick, string password, string nicknew, string passwordnew, string edadnew){
+    NodoLDobleCircular *edit;
+    edit = head;
+    int contar = size;
 
+    while(contar!=0){
+        if((edit!=head)){
+            if((nick==edit->nick)&&(password==edit->password)){
+                edit->nick = nicknew;
+                edit->password = passwordnew;
+                edit->edad = edadnew;
+            }
+            edit = edit->next;
+            contar -= 1;
+        }else{
+            break;
+        }
+    }
+}
+
+void LDobleCircular::buscar(string nick, string password){
+    NodoLDobleCircular *buscar;
+    int flag = 0;
+
+    while(buscar!=NULL){
+        if((buscar->nick==nick) && (buscar->password==password)){
+           cout<<"entraste"<<endl;
+           flag = 1;
+
+        }
+        buscar = buscar->next;
+
+        }
+        if(flag==0){
+            cout<<"nick no encontrado"<<endl;
+        }
 
 }
+

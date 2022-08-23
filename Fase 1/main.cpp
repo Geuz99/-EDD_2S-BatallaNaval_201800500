@@ -6,6 +6,7 @@
 #include"LDobleCircular.h"
 #include"ListaInterna.h"
 #include"ListaPrincipal.h"
+#include"Cola.h"
 
 using namespace std;
 using namespace nlohmann;
@@ -16,7 +17,8 @@ int main(int argc, char const *argv[])
 
     int opc = 0;
     LDobleCircular lista;
-    ListaPrincipal pruebas;
+    ListaPrincipal listaArticulos;
+    Cola colaTuto;
 
     do
     {
@@ -38,40 +40,51 @@ int main(int argc, char const *argv[])
                 json dato = json::parse(archivo);
                 for(int i=0;i<dato["usuarios"].size();i++){
                     lista.insert(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
-                    //lista->insert(dato["usuarios"][i]["nick"].get<string>());
-                    /*cout<<"nick:  "<<dato["usuarios"][i]["nick"].get<string>()<<endl;
-                    cout<<"pass:  "<<dato["usuarios"][i]["password"].get<string>()<<endl;
-                    cout<<"monedas:  "<<dato["usuarios"][i]["monedas"].get<string>()<<endl;
-                    cout<<"edad:  "<<dato["usuarios"][i]["edad"].get<string>()<<endl;*/
+
                 }
-                /*for(int i=0;i<dato["articulos"].size();i++){
-                    cout<<"id:  "<<dato["articulos"][i]["id"].get<string>()<<endl;
-                    cout<<"categoria:  "<<dato["articulos"][i]["categoria"].get<string>()<<endl;
-                    cout<<"precio:  "<<dato["articulos"][i]["precio"].get<string>()<<endl;
-                    cout<<"nombre:  "<<dato["articulos"][i]["nombre"].get<string>()<<endl;
-                    cout<<"src:  "<<dato["articulos"][i]["src"].get<string>()<<endl;*/
-                lista.imprimir();
+                for(int i=0;i<dato["articulos"].size();i++){
+                    listaArticulos.Insertar(dato["articulos"][i]["id"].get<string>(),dato["articulos"][i]["precio"].get<string>(), dato["articulos"][i]["nombre"].get<string>(), dato["articulos"][i]["src"].get<string>(),dato["articulos"][i]["categoria"].get<string>());
+
                 }
+                string ancho = dato["tutorial"]["ancho"].get<string>();
+                string alto = dato["tutorial"]["alto"].get<string>();
+                for(int i=0;i<dato["tutorial"]["movimientos"].size();i++){
+                    colaTuto.push(alto, ancho, dato["tutorial"]["movimientos"][i]["x"].get<string>(), dato["tutorial"]["movimientos"][i]["y"].get<string>());
+                }
+                /*lista.imprimir();
+                cout<<" "<<endl;
+                listaArticulos.Imprimir();*/
+                //colaTuto.Imprimir();
+            }
             break;
 
         case 2:
-            pruebas.Insertar("1", "10", "carro1", "carro1.png", "Epico");
-            pruebas.Insertar("2", "100", "carro2", "carro2.png", "Epico");
-            pruebas.Insertar("3", "1000", "carro3", "carro3.png", "Epico");
+            {
 
-            pruebas.Insertar("1", "10", "moto1", "moto1.png", "Raro");
-            pruebas.Insertar("2", "100", "moto2", "moto2.png", "Raro");
-            pruebas.Insertar("3", "1000", "moto3", "moto3.png", "Raro");
-
-            pruebas.Imprimir();
-
+            string nick="", password="", monedas="", edad="";
+            cout<<"********** Registrarse **********"<<endl;
+            cout<<">Ingrese su nick: ";cin>>nick;
+            cout<<">Ingrese su contrasenia: ";cin>>password;
+            cout<<">Ingrese su edad: ";cin>>edad;
+            lista.insert(nick, password, monedas, edad);
+            cout<<"*********************************"<<endl;
+            }
             break;
         case 3:
-            cout<<"Login"<<endl;
+            {
+              string nick="";
+              string password="";
+              cout<<"************* LOGIN *************"<<endl;
+              cout<<"*Nick: ";cin>>nick;
+              cout<<"*Password: ";cin>>password;
+              cout<<"*********************************"<<endl;
+              lista.editar(nick, password, "PA", "OLA", "22");
+            }
             break;
 
         case 4:
-            cout<<"Reportes"<<endl;
+            lista.imprimir();
+            cout<<" "<<endl;
             break;
 
         case 5:
