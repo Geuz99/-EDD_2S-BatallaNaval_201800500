@@ -78,7 +78,7 @@ int main(int argc, char const *argv[])
               cout<<"*Nick: ";cin>>nick;
               cout<<"*Password: ";cin>>password;
               cout<<"*********************************"<<endl;
-              lista.editar(nick, password, "PA", "OLA", "22");
+              lista.buscar(nick, password);
             }
             break;
 

@@ -23,6 +23,7 @@ class LDobleCircular
         void imprimir();
         void editar(string nick, string password, string nicknew, string passwordnew, string edadnew);
         void buscar(string nick, string password);
+        void eliminar(string nick, string password);
 
 
     protected:
