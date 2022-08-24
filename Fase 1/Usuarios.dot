@@ -1,0 +1,21 @@
+digraph G {
+label="Usuarios";
+node [shape=component, style=filled, color=blue, fillcolor=lightsteelblue1];
+Storias98[label="nick: Storias98
+password: gapa
+edad: 54
+monedas: 0"];
+EdSe[label="nick: EdSe
+password: jacki
+edad: 14
+monedas: 0"];
+Pablo[label="nick: Pablo
+password: Caca
+edad: 50
+monedas: "];
+//Enlazar Usuarios
+{rank=same;
+Storias98->EdSe->Pablo->Storias98
+EdSe->Storias98 Pablo->EdSe Storias98->Pablo 
+}
+}

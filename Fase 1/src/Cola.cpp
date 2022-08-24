@@ -1,6 +1,9 @@
 #include "Cola.h"
 
 #include<string>
+#include<iostream>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -62,3 +65,43 @@ void Cola::ImprimirTuto() {
     cout<<"-------------------------------------------"<<endl;
 }
 
+void Cola::GenerarGrafo(){
+    string dot = "";
+    dot = dot + "digraph G {\n";
+    dot = dot + "node [shape=Msquare, color=seagreen1];\n";
+    NodoCola *aux = head;
+    dot = dot + "//agregar nodos\n";
+    while (aux != NULL) {
+        dot = dot + "\"" + aux->x+ "," + aux->y + "\"" + "[label=\"" + "x: " + aux->x + "\ny: " + aux->y + "\"];\n";
+        aux = aux->next;
+    }
+    dot = dot + "{rank=same;\n";
+    aux = head;
+    while (aux != NULL) {
+
+        dot = dot + "\"" + aux->x+ "," + aux->y + "\"";
+        if (aux->next != NULL) {
+            dot = dot + "->";
+        }
+        aux = aux->next;
+    }
+    dot = dot + "}\n";
+    dot = dot + "}\n";
+
+    //cout << dot;
+    //------->escribir archivo
+    ofstream file;
+    file.open("Tutorial.dot");
+    file << dot;
+    file.close();
+
+    //------->generar png
+    system(("dot -Tpng Tutorial.dot -o  Tutorial.png"));
+
+    //------>abrir archivo
+    system(("Tutorial.png"));
+
+
+
+
+}

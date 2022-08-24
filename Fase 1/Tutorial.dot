@@ -1,0 +1,12 @@
+digraph G {
+node [shape=Msquare, color=seagreen1];
+//agregar nodos
+"20 ,5"[label="x: 20 
+y: 5"];
+"10,20"[label="x: 10
+y: 20"];
+"5,0"[label="x: 5
+y: 0"];
+{rank=same;
+"20 ,5"->"10,20"->"5,0"}
+}

@@ -1,6 +1,8 @@
 #include "ListaPrincipal.h"
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -18,6 +20,64 @@ void ListaPrincipal::Imprimir() {
         aux = aux->sig;
     }
     cout << ("NULL")<<endl;
+}
+
+void ListaPrincipal::GenerarGrafo(){
+    string dot = "";
+    dot = dot + "digraph G {\n";
+    dot = dot + "node [shape=signature, style=filled, color=lawngreen, fillcolor=lightgreen];\n";
+
+    nodoprincipal *aux = Inicio;
+    dot = dot + "//agregar nodos\n";
+    while (aux != NULL) {
+        dot = dot + aux->valor + "[label=\"" + aux->valor + "\"];\n";
+        nodointerno *auxI = aux->listainterna.Inicio;
+        while (auxI != NULL){
+            dot = dot + auxI->nombre + "[label=\"" + auxI->nombre + "\"];\n";
+            auxI = auxI->sig;
+        }
+        aux = aux->sig;
+    }
+    dot = dot + "{rank=same;\n";
+    aux = Inicio;
+    while (aux != NULL) {
+        dot = dot + aux->valor;
+        if (aux->sig != NULL) {
+            dot = dot + "->";
+        }
+        aux = aux->sig;
+    }
+    dot = dot + "}\n";
+
+    aux = Inicio;
+    while (aux != NULL) {
+        nodointerno *auxI = aux->listainterna.Inicio;
+        dot = dot + aux->valor;
+        dot = dot + "->";
+        while(auxI != NULL){
+            dot = dot + auxI->nombre;
+            if (auxI->sig != NULL) {
+                dot = dot + "->";
+            }
+            auxI = auxI->sig;
+        }
+        dot = dot + " ";
+        aux = aux->sig;
+    }
+    dot = dot + "}\n";
+
+    //cout << dot;
+    //------->escribir archivo
+    ofstream file;
+    file.open("Articulos.dot");
+    file << dot;
+    file.close();
+
+    //------->generar png
+    system(("dot -Tpng Articulos.dot -o  Articulos.png"));
+
+    //------>abrir archivo
+    system(("Articulos.png"));
 }
 
 void ListaPrincipal::ImprimirTienda() {

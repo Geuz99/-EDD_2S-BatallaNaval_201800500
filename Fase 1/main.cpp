@@ -84,9 +84,9 @@ int main(int argc, char const *argv[])
             break;
 
         case 4:
-            lista.imprimir();
-            pilaMov.Imprimir()
-            cout<<" "<<endl;
+            lista.GenerarGrafo();
+            listaArticulos.GenerarGrafo();
+            colaTuto.GenerarGrafo();
             break;
 
         case 5:

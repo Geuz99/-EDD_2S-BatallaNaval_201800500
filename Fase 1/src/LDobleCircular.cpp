@@ -3,6 +3,8 @@
 
 #include<string>
 #include<iostream>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -191,6 +193,57 @@ void LDobleCircular::eliminar(string nick, string password){
     }if(!flag){
         cout<<"HA OCURRIDO UN ERROR"<<endl;
     }
+
+}
+
+void LDobleCircular::GenerarGrafo(){
+    string dot = "";
+    dot = dot + "digraph G {\n";
+    dot = dot + "label=\"Usuarios\";\n";
+    dot = dot + "node [shape=component, style=filled, color=blue, fillcolor=lightsteelblue1];\n";
+    NodoLDobleCircular *aux = head;
+    do{
+        dot = dot + aux->nick + "[label=\"" + "nick: " + aux->nick + "\npassword: " + aux->password + "\nedad: " + aux->edad + "\nmonedas: " + aux->monedas + "\"];\n";
+        aux = aux->next;
+
+    }while (aux != head);
+    dot = dot + "//Enlazar Usuarios\n";
+    dot = dot + "{rank=same;\n";
+    aux = head;
+    do{
+        dot = dot + aux->nick;
+        if (aux->next != NULL) {
+            dot = dot + "->";
+        }
+        aux = aux->next;
+    }while (aux != head);
+    dot = dot + head->nick + "\n";
+    aux = head;
+    do{
+        dot = dot + aux->next->nick;
+        if (aux->next != NULL) {
+            dot = dot + "->";
+            dot = dot + aux->nick + " ";
+        }
+        aux = aux->next;
+    }while (aux != head);
+    dot = dot + "\n";
+    dot = dot + "}\n";
+    dot = dot + "}\n";
+    //cout<<dot;
+
+     //------->escribir archivo
+    ofstream file;
+    file.open("Usuarios.dot");
+    file << dot;
+    file.close();
+
+    //------->generar png
+    system(("dot -Tpng Usuarios.dot -o  Usuarios.png"));
+
+    //------>abrir archivo
+    system(("Usuarios.png"));
+
 
 }
 

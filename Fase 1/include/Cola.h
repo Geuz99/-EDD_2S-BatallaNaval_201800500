@@ -21,6 +21,7 @@ class Cola
         void push(string alto, string ancho, string x, string y);
         void pop();
         void ImprimirTuto();
+        void GenerarGrafo();
 
     private:
 };
