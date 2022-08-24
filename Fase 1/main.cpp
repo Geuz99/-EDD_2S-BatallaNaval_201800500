@@ -7,6 +7,8 @@
 #include"ListaInterna.h"
 #include"ListaPrincipal.h"
 #include"Cola.h"
+#include"Pila.h"
+#include"Lista.h"
 
 using namespace std;
 using namespace nlohmann;
@@ -19,6 +21,9 @@ int main(int argc, char const *argv[])
     LDobleCircular lista;
     ListaPrincipal listaArticulos;
     Cola colaTuto;
+    Pila pilaMov;
+    Lista listaMov;
+
 
     do
     {
@@ -51,7 +56,6 @@ int main(int argc, char const *argv[])
                 for(int i=0;i<dato["tutorial"]["movimientos"].size();i++){
                     colaTuto.push(alto, ancho, dato["tutorial"]["movimientos"][i]["x"].get<string>(), dato["tutorial"]["movimientos"][i]["y"].get<string>());
                 }
-
             }
             break;
 
@@ -75,7 +79,7 @@ int main(int argc, char const *argv[])
               cout<<"*Nick: ";cin>>nick;
               cout<<"*Password: ";cin>>password;
               cout<<"*********************************"<<endl;
-              lista.buscar(nick, password, colaTuto);
+              lista.buscar(nick, password, colaTuto, listaArticulos, pilaMov);
             }
             break;
 

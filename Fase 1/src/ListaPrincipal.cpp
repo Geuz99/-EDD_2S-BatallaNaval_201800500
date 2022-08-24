@@ -20,6 +20,24 @@ void ListaPrincipal::Imprimir() {
     cout << ("NULL")<<endl;
 }
 
+void ListaPrincipal::ImprimirTienda() {
+    nodoprincipal*aux = Inicio;
+    cout<<"-------------------------------------------------------"<<endl;
+    cout<<"                         Total Tokens "<<endl;
+    cout<<"Tienda"<<endl;
+    while (aux != NULL) {
+        cout <<"Categoria "<<aux->valor<<endl;
+        nodointerno * auxI = aux->listainterna.Inicio;
+        while (auxI != NULL) {
+            cout <<" Id "<<auxI->id<<" Nombre "<<auxI->nombre<<" Precio "<<auxI->precio<<endl;
+            auxI = auxI->sig;
+        }
+        aux = aux->sig;
+    }
+    cout<<"Elija opcion a comprar"<<endl;
+    cout<<"-------------------------------------------------------"<<endl;
+}
+
 void ListaPrincipal::Insertar(string id, string precio, string nombre, string src, string categoria) {
     if (Inicio == NULL) {//lista se encuentra vacia
         nodoprincipal*nuevo = new nodoprincipal();

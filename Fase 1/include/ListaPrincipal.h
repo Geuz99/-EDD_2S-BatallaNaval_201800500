@@ -18,6 +18,7 @@ class ListaPrincipal
             Inicio = NULL;
         }
         void Imprimir();
+        void ImprimirTienda();
         void GenerarGrafo();
         void Insertar(string id, string precio, string nombre, string src, string categoria);
         nodoprincipal * BuscarPrincipal(nodoprincipal*inicioL, string categoria);

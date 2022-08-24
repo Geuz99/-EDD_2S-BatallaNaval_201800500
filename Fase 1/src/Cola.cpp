@@ -48,6 +48,7 @@ void Cola::pop(){
 
 void Cola::ImprimirTuto() {
     NodoCola *aux = head;
+    cout<<"-------------------------------------------"<<endl;
     cout<<"TUTORIAL:"<<endl;
     cout<<"     Tablero:"<<endl;
     cout<<"         Ancho: "<<aux->ancho<<endl;
@@ -57,6 +58,6 @@ void Cola::ImprimirTuto() {
         cout <<"<-(" << aux->x << ","<< aux->y<< ")<-";
         aux = aux->next;
     }
-    cout<<""<<endl;
+    cout<<"-------------------------------------------"<<endl;
 }
 

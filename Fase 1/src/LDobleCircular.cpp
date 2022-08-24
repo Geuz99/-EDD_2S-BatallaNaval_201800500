@@ -65,7 +65,7 @@ void LDobleCircular::editar(string nick, string password, string nicknew, string
     }
 }
 
-void LDobleCircular::buscar(string nick, string password, Cola colaTuto){
+void LDobleCircular::buscar(string nick, string password, Cola colaTuto, ListaPrincipal listaArticulos, Pila pilaMov){
     int opc = 0;
     NodoLDobleCircular *buscar;
     buscar = head;
@@ -115,13 +115,29 @@ void LDobleCircular::buscar(string nick, string password, Cola colaTuto){
                     {
                     colaTuto.ImprimirTuto();
                     }
-
                     break;
                 case 4:
-                    cout<<"Tienda"<<endl;
+                    {
+                    listaArticulos.ImprimirTienda();
+                    }
                     break;
                 case 5:
+                    {
+                    int mov = 0;
+                    int x,y;
+                    string name = "";
                     cout<<"Realizar movimientos"<<endl;
+                    cout<<"Cuantos movimientos desea realizar: "<<endl;cin>>mov;
+                    for(int i=0;i<mov;i++){
+                        cout<<i+1<<"- "<<" (x,y) ";cin>>x;cin>>y;
+                        cout<<"";
+                        //cout<<i+1<<"- "<<" (x,y) "<<x<<","<<y<<endl;
+                        pilaMov.push(x,y);
+                    }
+                    //cout<<"Nombre para guardar los movimientos: "<<endl;cin>>name;
+                    pilaMov.Imprimir();
+
+                    }
                     break;
                 case 6:
                     break;
@@ -142,7 +158,7 @@ void LDobleCircular::buscar(string nick, string password, Cola colaTuto){
             cout<<"EL NICK O LA CONTRASEIA NO EXISTE"<<endl;
         }
     }else{
-        cout<<"NULL"<<endl;
+        cout<<"BASE DE DATOS VACIA..."<<endl;
     }
 
 }
@@ -170,6 +186,7 @@ void LDobleCircular::eliminar(string nick, string password){
                 }
                 cout<<"CUENTA ELIMINADA"<<endl;
                 flag = true;
+
             }
             anterior = actual;
             actual = actual->next;
