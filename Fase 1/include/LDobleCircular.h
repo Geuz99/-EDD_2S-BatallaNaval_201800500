@@ -5,6 +5,7 @@
 #include<iostream>
 
 #include "NodoLDobleCircular.h"
+#include"Cola.h"
 
 using namespace std;
 
@@ -22,7 +23,7 @@ class LDobleCircular
         void insert(string nick, string password, string monedas, string edad);
         void imprimir();
         void editar(string nick, string password, string nicknew, string passwordnew, string edadnew);
-        void buscar(string nick, string password);
+        void buscar(string nick, string password, Cola colaTuto);
         void eliminar(string nick, string password);
 
 

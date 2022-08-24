@@ -1,9 +1,13 @@
 #include "LDobleCircular.h"
+#include"Cola.h"
 
 #include<string>
 #include<iostream>
 
 using namespace std;
+
+
+Cola cola;
 
 void LDobleCircular::insert(string nick, string password, string monedas, string edad){
     NodoLDobleCircular *nuevo = new NodoLDobleCircular(nick, password, monedas, edad);
@@ -61,7 +65,7 @@ void LDobleCircular::editar(string nick, string password, string nicknew, string
     }
 }
 
-void LDobleCircular::buscar(string nick, string password){
+void LDobleCircular::buscar(string nick, string password, Cola colaTuto){
     int opc = 0;
     NodoLDobleCircular *buscar;
     buscar = head;
@@ -103,18 +107,15 @@ void LDobleCircular::buscar(string nick, string password){
                         eliminar(buscar->nick, buscar->password);
                         return;
                     }else if(aux=="n"){
-                        break;
-                    }else{
-                        cout<<"si o no ????"<<endl;
-                    }
+                        cout<<"Cuenta no eliminada";
+                        }
                     }
                     break;
                 case 3:
-                    cout<<"TUTORIAL:"<<endl;
-                    cout<<"     Tablero:"<<endl;
-                    cout<<"         Ancho:"<<endl;
-                    cout<<"         Alto:"<<endl;
-                    cout<<"     Movimientos:"<<endl;
+                    {
+                    colaTuto.ImprimirTuto();
+                    }
+
                     break;
                 case 4:
                     cout<<"Tienda"<<endl;

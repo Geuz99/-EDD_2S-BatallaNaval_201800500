@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1661271103 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
+1661299013 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
 	<iostream>
 	<fstream>
 	<nlohmann/json.hpp>
@@ -9,15 +9,17 @@
 	"ListaPrincipal.h"
 	"Cola.h"
 
-1661276347 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
+1661299394 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
 	"LDobleCircular.h"
+	"Cola.h"
 	<string>
 	<iostream>
 
-1661277054 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
+1661299445 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
 	<stddef.h>
 	<iostream>
 	"NodoLDobleCircular.h"
+	"Cola.h"
 
 1661127315 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoldoblecircular.h
 	<iostream>
@@ -498,15 +500,15 @@
 1661195376 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodocola.cpp
 	"NodoCola.h"
 
-1661235055 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodocola.h
+1661298677 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodocola.h
 	<string>
 	<stddef.h>
 
-1661235251 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\cola.cpp
+1661298405 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\cola.cpp
 	"Cola.h"
 	<string>
 
-1661235065 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\cola.h
+1661298735 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\cola.h
 	<stddef.h>
 	<iostream>
 	"NodoCola.h"

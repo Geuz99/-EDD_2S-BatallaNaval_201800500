@@ -51,10 +51,7 @@ int main(int argc, char const *argv[])
                 for(int i=0;i<dato["tutorial"]["movimientos"].size();i++){
                     colaTuto.push(alto, ancho, dato["tutorial"]["movimientos"][i]["x"].get<string>(), dato["tutorial"]["movimientos"][i]["y"].get<string>());
                 }
-                /*lista.imprimir();
-                cout<<" "<<endl;
-                listaArticulos.Imprimir();*/
-                //colaTuto.Imprimir();
+
             }
             break;
 
@@ -78,7 +75,7 @@ int main(int argc, char const *argv[])
               cout<<"*Nick: ";cin>>nick;
               cout<<"*Password: ";cin>>password;
               cout<<"*********************************"<<endl;
-              lista.buscar(nick, password);
+              lista.buscar(nick, password, colaTuto);
             }
             break;
 
