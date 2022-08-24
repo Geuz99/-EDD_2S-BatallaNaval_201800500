@@ -131,12 +131,9 @@ void LDobleCircular::buscar(string nick, string password, Cola colaTuto, ListaPr
                     for(int i=0;i<mov;i++){
                         cout<<i+1<<"- "<<" (x,y) ";cin>>x;cin>>y;
                         cout<<"";
-                        //cout<<i+1<<"- "<<" (x,y) "<<x<<","<<y<<endl;
                         pilaMov.push(x,y);
                     }
-                    //cout<<"Nombre para guardar los movimientos: "<<endl;cin>>name;
-                    pilaMov.Imprimir();
-
+                    cout<<"Nombre para guardar los movimientos: "<<endl;cin>>name;
                     }
                     break;
                 case 6:

@@ -85,6 +85,7 @@ int main(int argc, char const *argv[])
 
         case 4:
             lista.imprimir();
+            pilaMov.Imprimir()
             cout<<" "<<endl;
             break;
 

@@ -58,6 +58,7 @@ void Cola::ImprimirTuto() {
         cout <<"<-(" << aux->x << ","<< aux->y<< ")<-";
         aux = aux->next;
     }
+    cout<<""<<endl;
     cout<<"-------------------------------------------"<<endl;
 }
 

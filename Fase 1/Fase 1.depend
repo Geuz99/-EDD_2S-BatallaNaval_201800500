@@ -527,12 +527,12 @@
 	<stddef.h>
 	<string>
 
-1661316810 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\lista.h
+1661320962 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\lista.h
 	"NodoLista.h"
 	<iostream>
 	<string>
 
-1661316955 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodolista.h
+1661320931 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodolista.h
 	<stddef.h>
 	<string>
 
@@ -545,6 +545,6 @@
 1661315340 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodolista.cpp
 	"NodoLista.h"
 
-1661316962 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\lista.cpp
+1661320976 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\lista.cpp
 	"Lista.h"
 

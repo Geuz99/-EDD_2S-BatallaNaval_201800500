@@ -36,10 +36,14 @@
 		</Compiler>
 		<Unit filename="include/Cola.h" />
 		<Unit filename="include/LDobleCircular.h" />
+		<Unit filename="include/Lista.h" />
 		<Unit filename="include/ListaInterna.h" />
 		<Unit filename="include/ListaPrincipal.h" />
 		<Unit filename="include/NodoCola.h" />
 		<Unit filename="include/NodoLDobleCircular.h" />
+		<Unit filename="include/NodoLista.h" />
+		<Unit filename="include/NodoPila.h" />
+		<Unit filename="include/Pila.h" />
 		<Unit filename="include/nlohmann/adl_serializer.hpp" />
 		<Unit filename="include/nlohmann/byte_container_with_subtype.hpp" />
 		<Unit filename="include/nlohmann/detail/abi_macros.hpp" />
@@ -89,10 +93,14 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Cola.cpp" />
 		<Unit filename="src/LDobleCircular.cpp" />
+		<Unit filename="src/Lista.cpp" />
 		<Unit filename="src/ListaInterna.cpp" />
 		<Unit filename="src/ListaPrincipal.cpp" />
 		<Unit filename="src/NodoCola.cpp" />
 		<Unit filename="src/NodoLDobleCircular.cpp" />
+		<Unit filename="src/NodoLista.cpp" />
+		<Unit filename="src/NodoPila.cpp" />
+		<Unit filename="src/Pila.cpp" />
 		<Unit filename="src/nodointerno.cpp" />
 		<Unit filename="src/nodoprincipal.cpp" />
 		<Extensions />
