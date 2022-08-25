@@ -199,6 +199,7 @@ void LDobleCircular::eliminar(string nick, string password){
 
 void LDobleCircular::GenerarGrafo(){
     string dot = "";
+
     dot = dot + "digraph G {\n";
     dot = dot + "label=\"Usuarios\";\n";
     dot = dot + "node [shape=component, style=filled, color=blue, fillcolor=lightsteelblue1];\n";
@@ -254,7 +255,7 @@ void LDobleCircular::Ascendente(){
     do{
         tem = aux->next;
         while(tem!=head){
-            if(aux->edad > tem->edad){
+            if(stoi(aux->edad) > stoi(tem->edad)){
                 nick = aux->nick;
                 password = aux->password;
                 monedas = aux->monedas;
@@ -290,7 +291,7 @@ void LDobleCircular::Descendente(){
     do{
         tem = aux->next;
         while(tem!=head){
-            if(aux->edad < tem->edad){
+            if(stoi(aux->edad) < stoi(tem->edad)){
                 nick = aux->nick;
                 password = aux->password;
                 monedas = aux->monedas;

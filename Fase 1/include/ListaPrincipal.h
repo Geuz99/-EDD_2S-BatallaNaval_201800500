@@ -22,6 +22,8 @@ class ListaPrincipal
         void GenerarGrafo();
         void Insertar(string id, string precio, string nombre, string src, string categoria);
         nodoprincipal * BuscarPrincipal(nodoprincipal*inicioL, string categoria);
+        void Ascendente();
+        void Descendente();
 
     private:
 };
