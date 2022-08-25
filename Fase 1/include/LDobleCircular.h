@@ -29,6 +29,8 @@ class LDobleCircular
         void buscar(string nick, string password, Cola colaTuto, ListaPrincipal listaArticulos, Pila pilaMov);
         void eliminar(string nick, string password);
         void GenerarGrafo();
+        void Ascendente();
+        void Descendente();
 
 
     protected:

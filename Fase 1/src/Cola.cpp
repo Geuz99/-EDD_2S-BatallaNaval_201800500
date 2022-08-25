@@ -101,7 +101,4 @@ void Cola::GenerarGrafo(){
     //------>abrir archivo
     system(("Tutorial.png"));
 
-
-
-
 }

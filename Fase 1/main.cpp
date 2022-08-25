@@ -62,13 +62,14 @@ int main(int argc, char const *argv[])
         case 2:
             {
 
-            string nick="", password="", monedas="", edad="";
+            string nick="", password="", monedas="0", edad="";
             cout<<"********** Registrarse **********"<<endl;
             cout<<">Ingrese su nick: ";cin>>nick;
             cout<<">Ingrese su contrasenia: ";cin>>password;
             cout<<">Ingrese su edad: ";cin>>edad;
             lista.insert(nick, password, monedas, edad);
             cout<<"*********************************"<<endl;
+
             }
             break;
         case 3:
@@ -87,6 +88,11 @@ int main(int argc, char const *argv[])
             lista.GenerarGrafo();
             listaArticulos.GenerarGrafo();
             colaTuto.GenerarGrafo();
+            pilaMov.GenerarGrafo2();
+            cout<<"****************** USUARIOS ASCENDENTES ******************"<<endl;
+            lista.Ascendente();
+            cout<<"****************** USUARIOS DESCENDENTE ******************"<<endl;
+            lista.Descendente();
             break;
 
         case 5:

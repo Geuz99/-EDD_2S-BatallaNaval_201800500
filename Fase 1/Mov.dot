@@ -1,0 +1,16 @@
+digraph G {
+node [shape=tab, color=goldenrod2, style=filled];
+//agregar nodos
+"4,4"[label="x: 4
+y: 4"];
+"3,3"[label="x: 3
+y: 3"];
+"2,2"[label="x: 2
+y: 2"];
+"1,1"[label="x: 1
+y: 1"];
+"0,0"[label="x: 0
+y: 0"];
+{rank=same;
+"4,4"->"3,3"->"2,2"->"1,1"->"0,0"}
+}

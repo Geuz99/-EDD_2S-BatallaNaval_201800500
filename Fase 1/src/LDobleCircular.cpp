@@ -76,7 +76,7 @@ void LDobleCircular::buscar(string nick, string password, Cola colaTuto, ListaPr
 
         do{
             if(buscar->nick==nick && buscar->password==password){
-                //login(nick, password);
+
                 do
                 {
                 cout<<"****** BIENVENIDO "<<buscar->nick<<" *******"<<endl;
@@ -135,6 +135,7 @@ void LDobleCircular::buscar(string nick, string password, Cola colaTuto, ListaPr
                         cout<<"";
                         pilaMov.push(x,y);
                     }
+                    pilaMov.GenerarGrafo();
                     cout<<"Nombre para guardar los movimientos: "<<endl;cin>>name;
                     }
                     break;
@@ -244,8 +245,81 @@ void LDobleCircular::GenerarGrafo(){
     //------>abrir archivo
     system(("Usuarios.png"));
 
-
 }
+
+void LDobleCircular::Ascendente(){
+    NodoLDobleCircular *aux = head;
+    NodoLDobleCircular *tem;
+    string nick, password, monedas, edad;
+    do{
+        tem = aux->next;
+        while(tem!=head){
+            if(aux->edad > tem->edad){
+                nick = aux->nick;
+                password = aux->password;
+                monedas = aux->monedas;
+                edad = aux->edad;
+
+                aux->nick = tem->nick;
+                aux->password = tem->password;
+                aux->monedas = tem->monedas;
+                aux->edad = tem->edad;
+
+                tem->nick = nick;
+                tem->password = password;
+                tem->monedas = monedas;
+                tem->edad = edad;
+            }
+            tem = tem->next;
+        }
+        aux = aux->next;
+        tem = aux->next;
+    }while(tem!=head);
+    aux = head;
+    do
+        {
+            cout<<"nick: "<<aux->nick<<", password: "<<aux->password<<", monedas: "<<aux->monedas<<", edad: "<<aux->edad<<endl;
+            aux = aux->next;
+        } while (aux != head);
+}
+
+void LDobleCircular::Descendente(){
+    NodoLDobleCircular *aux = head;
+    NodoLDobleCircular *tem;
+    string nick, password, monedas, edad;
+    do{
+        tem = aux->next;
+        while(tem!=head){
+            if(aux->edad < tem->edad){
+                nick = aux->nick;
+                password = aux->password;
+                monedas = aux->monedas;
+                edad = aux->edad;
+
+                aux->nick = tem->nick;
+                aux->password = tem->password;
+                aux->monedas = tem->monedas;
+                aux->edad = tem->edad;
+
+                tem->nick = nick;
+                tem->password = password;
+                tem->monedas = monedas;
+                tem->edad = edad;
+            }
+            tem = tem->next;
+        }
+        aux = aux->next;
+        tem = aux->next;
+    }while(tem!=head);
+    aux = head;
+    do
+        {
+            cout<<"nick: "<<aux->nick<<", password: "<<aux->password<<", monedas: "<<aux->monedas<<", edad: "<<aux->edad<<endl;
+            aux = aux->next;
+        } while (aux != head);
+}
+
+
 
 
 

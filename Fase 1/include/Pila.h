@@ -18,6 +18,8 @@ class Pila
         void push(int x, int y);
         void pop();
         void Imprimir();
+        void GenerarGrafo();
+        void GenerarGrafo2();
 
     private:
 };

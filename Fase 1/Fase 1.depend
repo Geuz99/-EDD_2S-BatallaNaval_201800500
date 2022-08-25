@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1661380790 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
+1661395208 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
 	<iostream>
 	<fstream>
 	<nlohmann/json.hpp>
@@ -11,7 +11,7 @@
 	"Pila.h"
 	"Lista.h"
 
-1661380816 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
+1661395208 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
 	"LDobleCircular.h"
 	"Cola.h"
 	<string>
@@ -19,7 +19,7 @@
 	<fstream>
 	<sstream>
 
-1661364595 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
+1661393556 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
 	<stddef.h>
 	<iostream>
 	"NodoLDobleCircular.h"
@@ -513,7 +513,7 @@
 	<string>
 	<stddef.h>
 
-1661380952 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\cola.cpp
+1661387572 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\cola.cpp
 	"Cola.h"
 	<string>
 	<iostream>
@@ -525,7 +525,7 @@
 	<iostream>
 	"NodoCola.h"
 
-1661315672 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\pila.h
+1661390228 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\pila.h
 	<iostream>
 	<string>
 	"NodoPila.h"
@@ -546,8 +546,12 @@
 1661314515 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodopila.cpp
 	"NodoPila.h"
 
-1661315481 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\pila.cpp
+1661390198 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\pila.cpp
 	"Pila.h"
+	<string>
+	<iostream>
+	<fstream>
+	<sstream>
 
 1661315340 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodolista.cpp
 	"NodoLista.h"
