@@ -1,7 +1,9 @@
 #include "Lista.h"
 
-void Lista::InsertarFinal(string nombre) {
-    NodoLista *nuevo = new NodoLista(nombre);
+void Lista::InsertarFinal(string nombre, int x, int y) {
+    NodoLista *nuevo = new NodoLista();
+    nuevo->name = nombre;
+    nuevo->pila.push(x,y);
 
     if (head == NULL) {
         head = nuevo;

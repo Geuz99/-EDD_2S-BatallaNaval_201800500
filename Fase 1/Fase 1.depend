@@ -499,7 +499,7 @@
 	<string>
 	"nodoprincipal.h"
 
-1661399013 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listaprincipal.cpp
+1661405165 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listaprincipal.cpp
 	"ListaPrincipal.h"
 	<string>
 	<iostream>
@@ -534,14 +534,15 @@
 	<stddef.h>
 	<string>
 
-1661320962 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\lista.h
+1661406023 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\lista.h
 	"NodoLista.h"
 	<iostream>
 	<string>
 
-1661320931 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodolista.h
+1661405496 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodolista.h
 	<stddef.h>
 	<string>
+	"Pila.h"
 
 1661314515 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodopila.cpp
 	"NodoPila.h"
@@ -556,6 +557,6 @@
 1661315340 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodolista.cpp
 	"NodoLista.h"
 
-1661320976 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\lista.cpp
+1661406004 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\lista.cpp
 	"Lista.h"
 

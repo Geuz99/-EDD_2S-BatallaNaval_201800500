@@ -4,16 +4,19 @@
 #include <stddef.h>
 #include<string>
 
+#include"Pila.h"
+
 using namespace std;
 
 class NodoLista
 {
     public:
         string name;
+        Pila pila;
         NodoLista *next;
 
-        NodoLista(string _name){
-            name = _name;
+        NodoLista(){
+            name = "";
             next = NULL;
         }
 

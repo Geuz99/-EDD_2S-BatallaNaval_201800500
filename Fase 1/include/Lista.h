@@ -15,7 +15,7 @@ class Lista
         Lista(){
             head = NULL;
         }
-        void InsertarFinal(string nombre);
+        void InsertarFinal(string nombre, int x, int y);
         void Imprimir();
 
     private:
