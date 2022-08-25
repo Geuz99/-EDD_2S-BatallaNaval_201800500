@@ -33,7 +33,7 @@ void ListaPrincipal::GenerarGrafo(){
         dot = dot + aux->valor + "[label=\"" + aux->valor + "\"];\n";
         nodointerno *auxI = aux->listainterna.Inicio;
         while (auxI != NULL){
-            dot = dot + auxI->nombre + "[label=\"" + auxI->nombre + "\"];\n";
+            dot = dot + auxI->id + "[label=\"" + auxI->nombre + "\"];\n";
             auxI = auxI->sig;
         }
         aux = aux->sig;
@@ -55,7 +55,7 @@ void ListaPrincipal::GenerarGrafo(){
         dot = dot + aux->valor;
         dot = dot + "->";
         while(auxI != NULL){
-            dot = dot + auxI->nombre;
+            dot = dot + auxI->id;
             if (auxI->sig != NULL) {
                 dot = dot + "->";
             }
