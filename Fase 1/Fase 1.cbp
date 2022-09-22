@@ -34,11 +34,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ArbolB.h" />
 		<Unit filename="include/Cola.h" />
 		<Unit filename="include/LDobleCircular.h" />
 		<Unit filename="include/Lista.h" />
 		<Unit filename="include/ListaInterna.h" />
 		<Unit filename="include/ListaPrincipal.h" />
+		<Unit filename="include/NodoB.h" />
 		<Unit filename="include/NodoCola.h" />
 		<Unit filename="include/NodoLDobleCircular.h" />
 		<Unit filename="include/NodoLista.h" />
@@ -91,11 +93,13 @@
 		<Unit filename="include/nodointerno.h" />
 		<Unit filename="include/nodoprincipal.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ArbolB.cpp" />
 		<Unit filename="src/Cola.cpp" />
 		<Unit filename="src/LDobleCircular.cpp" />
 		<Unit filename="src/Lista.cpp" />
 		<Unit filename="src/ListaInterna.cpp" />
 		<Unit filename="src/ListaPrincipal.cpp" />
+		<Unit filename="src/NodoB.cpp" />
 		<Unit filename="src/NodoCola.cpp" />
 		<Unit filename="src/NodoLDobleCircular.cpp" />
 		<Unit filename="src/NodoLista.cpp" />
