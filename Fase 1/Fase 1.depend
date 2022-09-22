@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1661398491 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
+1663813642 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\main.cpp
 	<iostream>
 	<fstream>
 	<nlohmann/json.hpp>
@@ -10,8 +10,9 @@
 	"Cola.h"
 	"Pila.h"
 	"Lista.h"
+	"ArbolB.h"
 
-1661400429 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
+1663795900 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\ldoblecircular.cpp
 	"LDobleCircular.h"
 	"Cola.h"
 	<string>
@@ -19,7 +20,7 @@
 	<fstream>
 	<sstream>
 
-1661393556 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
+1663788306 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\ldoblecircular.h
 	<stddef.h>
 	<iostream>
 	"NodoLDobleCircular.h"
@@ -28,14 +29,14 @@
 	"Pila.h"
 	"Lista.h"
 
-1661127315 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoldoblecircular.h
+1663788300 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoldoblecircular.h
 	<iostream>
 	<string>
 
-1661072556 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoldoblecircular.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoldoblecircular.cpp
 	"NodoLDobleCircular.h"
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\json.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\json.hpp
 	<algorithm>
 	<cstddef>
 	<functional>
@@ -79,16 +80,16 @@
 	<string_view>
 	<nlohmann/detail/macro_unscope.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\adl_serializer.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\adl_serializer.hpp
 	<utility>
 	<nlohmann/detail/abi_macros.hpp>
 	<nlohmann/detail/conversions/from_json.hpp>
 	<nlohmann/detail/conversions/to_json.hpp>
 	<nlohmann/detail/meta/identity_tag.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\abi_macros.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\abi_macros.hpp
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\conversions\from_json.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\conversions\from_json.hpp
 	<algorithm>
 	<array>
 	<forward_list>
@@ -109,7 +110,7 @@
 	<nlohmann/detail/string_concat.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\exceptions.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\exceptions.hpp
 	<cstddef>
 	<exception>
 	<stdexcept>
@@ -123,7 +124,7 @@
 	<nlohmann/detail/meta/type_traits.hpp>
 	<nlohmann/detail/string_concat.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\value_t.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\value_t.hpp
 	<array>
 	<cstddef>
 	<cstdint>
@@ -131,7 +132,7 @@
 	<nlohmann/detail/macro_scope.hpp>
 	<compare>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\macro_scope.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\macro_scope.hpp
 	<utility>
 	<nlohmann/detail/meta/detected.hpp>
 	<nlohmann/thirdparty/hedley/hedley.hpp>
@@ -140,32 +141,32 @@
 	<cstdlib>
 	<cassert>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\detected.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\detected.hpp
 	<type_traits>
 	<nlohmann/detail/meta/void_t.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\void_t.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\void_t.hpp
 	<nlohmann/detail/abi_macros.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\thirdparty\hedley\hedley.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\thirdparty\hedley\hedley.hpp
 	<stdint.h>
 	<stdint.h>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\string_escape.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\string_escape.hpp
 	<nlohmann/detail/abi_macros.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\position_t.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\position_t.hpp
 	<cstddef>
 	<nlohmann/detail/abi_macros.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\cpp_future.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\cpp_future.hpp
 	<array>
 	<cstddef>
 	<type_traits>
 	<utility>
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\type_traits.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\type_traits.hpp
 	<limits>
 	<type_traits>
 	<utility>
@@ -178,19 +179,19 @@
 	<nlohmann/detail/meta/detected.hpp>
 	<nlohmann/json_fwd.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\iterator_traits.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\iterator_traits.hpp
 	<iterator>
 	<nlohmann/detail/abi_macros.hpp>
 	<nlohmann/detail/meta/void_t.hpp>
 	<nlohmann/detail/meta/cpp_future.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\call_std\begin.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\call_std\begin.hpp
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\call_std\end.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\call_std\end.hpp
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\json_fwd.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\json_fwd.hpp
 	<cstdint>
 	<map>
 	<memory>
@@ -198,22 +199,22 @@
 	<vector>
 	<nlohmann/detail/abi_macros.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\string_concat.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\string_concat.hpp
 	<cstring>
 	<string>
 	<utility>
 	<nlohmann/detail/meta/cpp_future.hpp>
 	<nlohmann/detail/meta/detected.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\identity_tag.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\identity_tag.hpp
 	<nlohmann/detail/abi_macros.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\std_fs.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\std_fs.hpp
 	<nlohmann/detail/macro_scope.hpp>
 	<experimental/filesystem>
 	<filesystem>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\conversions\to_json.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\conversions\to_json.hpp
 	<algorithm>
 	<iterator>
 	<string>
@@ -229,7 +230,7 @@
 	<nlohmann/detail/meta/type_traits.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\iteration_proxy.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\iteration_proxy.hpp
 	<cstddef>
 	<iterator>
 	<string>
@@ -240,20 +241,20 @@
 	<nlohmann/detail/meta/type_traits.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\byte_container_with_subtype.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\byte_container_with_subtype.hpp
 	<cstdint>
 	<tuple>
 	<utility>
 	<nlohmann/detail/abi_macros.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\hash.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\hash.hpp
 	<cstdint>
 	<cstddef>
 	<functional>
 	<nlohmann/detail/abi_macros.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\binary_reader.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\binary_reader.hpp
 	<algorithm>
 	<array>
 	<cmath>
@@ -276,7 +277,7 @@
 	<nlohmann/detail/string_concat.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\input_adapters.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\input_adapters.hpp
 	<array>
 	<cstddef>
 	<cstring>
@@ -291,7 +292,7 @@
 	<nlohmann/detail/iterators/iterator_traits.hpp>
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\json_sax.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\json_sax.hpp
 	<cstddef>
 	<string>
 	<utility>
@@ -300,7 +301,7 @@
 	<nlohmann/detail/macro_scope.hpp>
 	<nlohmann/detail/string_concat.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\lexer.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\lexer.hpp
 	<array>
 	<clocale>
 	<cstddef>
@@ -314,7 +315,7 @@
 	<nlohmann/detail/input/position_t.hpp>
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\is_sax.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\meta\is_sax.hpp
 	<cstdint>
 	<utility>
 	<string>
@@ -322,7 +323,7 @@
 	<nlohmann/detail/meta/detected.hpp>
 	<nlohmann/detail/meta/type_traits.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\parser.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\input\parser.hpp
 	<cmath>
 	<cstdint>
 	<functional>
@@ -338,16 +339,16 @@
 	<nlohmann/detail/string_concat.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\internal_iterator.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\internal_iterator.hpp
 	<nlohmann/detail/abi_macros.hpp>
 	<nlohmann/detail/iterators/primitive_iterator.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\primitive_iterator.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\primitive_iterator.hpp
 	<cstddef>
 	<limits>
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\iter_impl.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\iter_impl.hpp
 	<iterator>
 	<type_traits>
 	<nlohmann/detail/exceptions.hpp>
@@ -358,13 +359,13 @@
 	<nlohmann/detail/meta/type_traits.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\json_reverse_iterator.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\iterators\json_reverse_iterator.hpp
 	<cstddef>
 	<iterator>
 	<utility>
 	<nlohmann/detail/abi_macros.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\json_pointer.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\json_pointer.hpp
 	<algorithm>
 	<cctype>
 	<cerrno>
@@ -381,13 +382,13 @@
 	<nlohmann/detail/string_escape.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\json_ref.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\json_ref.hpp
 	<initializer_list>
 	<utility>
 	<nlohmann/detail/abi_macros.hpp>
 	<nlohmann/detail/meta/type_traits.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\output\binary_writer.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\output\binary_writer.hpp
 	<algorithm>
 	<array>
 	<map>
@@ -403,7 +404,7 @@
 	<nlohmann/detail/output/output_adapters.hpp>
 	<nlohmann/detail/string_concat.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\output\output_adapters.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\output\output_adapters.hpp
 	<algorithm>
 	<cstddef>
 	<iterator>
@@ -414,7 +415,7 @@
 	<ostream>
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\output\serializer.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\output\serializer.hpp
 	<algorithm>
 	<array>
 	<clocale>
@@ -436,7 +437,7 @@
 	<nlohmann/detail/string_concat.hpp>
 	<nlohmann/detail/value_t.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\conversions\to_chars.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\conversions\to_chars.hpp
 	<array>
 	<cmath>
 	<cstdint>
@@ -445,7 +446,7 @@
 	<type_traits>
 	<nlohmann/detail/macro_scope.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\ordered_map.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\ordered_map.hpp
 	<functional>
 	<initializer_list>
 	<iterator>
@@ -457,10 +458,10 @@
 	<nlohmann/detail/macro_scope.hpp>
 	<nlohmann/detail/meta/type_traits.hpp>
 
-1661063874 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\macro_unscope.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\detail\macro_unscope.hpp
 	<nlohmann/thirdparty/hedley/hedley_undef.hpp>
 
-1661063875 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\thirdparty\hedley\hedley_undef.hpp
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nlohmann\thirdparty\hedley\hedley_undef.hpp
 
 1661125447 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\usuarios.h
 	<stddef.h>
@@ -470,93 +471,111 @@
 1661110890 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\usuarios.cpp
 	"Usuarios.h"
 
-1661185245 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoprincipal.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodoprincipal.cpp
 	"nodoprincipal.h"
 
-1661192900 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoprincipal.h
+1663799266 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodoprincipal.h
 	<stddef.h>
 	<string>
 	"ListaInterna.h"
 
-1661193094 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listainterna.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listainterna.cpp
 	"ListaInterna.h"
 	<string>
 
-1661192999 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listainterna.h
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listainterna.h
 	"nodointerno.h"
 	<iostream>
 	<string>
 
-1661192895 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodointerno.h
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodointerno.h
 	<stddef.h>
 	<string>
 
-1661185341 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodointerno.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodointerno.cpp
 	"nodointerno.h"
 
-1661396977 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listaprincipal.h
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\listaprincipal.h
 	<iostream>
 	<string>
 	"nodoprincipal.h"
 
-1661405165 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listaprincipal.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\listaprincipal.cpp
 	"ListaPrincipal.h"
 	<string>
 	<iostream>
 	<fstream>
 	<sstream>
 
-1661195376 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodocola.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodocola.cpp
 	"NodoCola.h"
 
-1661298677 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodocola.h
+1663801641 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodocola.h
 	<string>
 	<stddef.h>
 
-1661387572 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\cola.cpp
+1663801709 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\cola.cpp
 	"Cola.h"
 	<string>
 	<iostream>
 	<fstream>
 	<sstream>
 
-1661377619 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\cola.h
+1663801332 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\cola.h
 	<stddef.h>
 	<iostream>
 	"NodoCola.h"
 
-1661390228 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\pila.h
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\pila.h
 	<iostream>
 	<string>
 	"NodoPila.h"
 
-1661315463 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodopila.h
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodopila.h
 	<stddef.h>
 	<string>
 
-1661406023 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\lista.h
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\lista.h
 	"NodoLista.h"
 	<iostream>
 	<string>
 
-1661405496 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodolista.h
+1663635843 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodolista.h
 	<stddef.h>
 	<string>
 	"Pila.h"
 
-1661314515 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodopila.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodopila.cpp
 	"NodoPila.h"
 
-1661390198 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\pila.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\pila.cpp
 	"Pila.h"
 	<string>
 	<iostream>
 	<fstream>
 	<sstream>
 
-1661315340 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodolista.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodolista.cpp
 	"NodoLista.h"
 
-1661406004 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\lista.cpp
+1663635843 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\lista.cpp
 	"Lista.h"
+
+1663785151 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\nodob.cpp
+
+1663813624 source:c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\src\arbolb.cpp
+	"ArbolB.h"
+	<fstream>
+	<string>
+	<sstream>
+	<iostream>
+
+1663813624 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\arbolb.h
+	<algorithm>
+	"NodoB.h"
+
+1663813624 c:\users\geuz99\desktop\[edd_2s]batallanaval_201800500\-edd_2s-batallanaval_201800500\fase 1\include\nodob.h
+	<stddef.h>
+	<iostream>
+	<string>
 

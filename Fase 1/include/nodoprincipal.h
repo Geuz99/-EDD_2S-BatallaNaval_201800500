@@ -15,12 +15,14 @@ class nodoprincipal
     //----valores
     ListaInterna listainterna;
     string valor;
+    int ide;
     //----apuntadores
     nodoprincipal*sig;
 
     nodoprincipal() {
         sig = NULL;
         valor = "";
+        ide = 0;
     }
     private:
 };

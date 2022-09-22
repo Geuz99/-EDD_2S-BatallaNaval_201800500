@@ -7,8 +7,8 @@
 
 using namespace std;
 
-void Cola::push(string alto, string ancho, string x, string y){
-    NodoCola *nuevo = new NodoCola(alto, ancho, x, y);
+void Cola::push(string alto, string ancho, string x, string y, int id){
+    NodoCola *nuevo = new NodoCola(alto, ancho, x, y, id);
     if (head==NULL){
         head = nuevo;
         head->next = NULL;
@@ -72,14 +72,14 @@ void Cola::GenerarGrafo(){
     NodoCola *aux = head;
     dot = dot + "//agregar nodos\n";
     while (aux != NULL) {
-        dot = dot + "\"" + aux->x+ "," + aux->y + "\"" + "[label=\"" + "x: " + aux->x + "\ny: " + aux->y + "\"];\n";
+        dot = dot + to_string(aux->id) + "[label=\"" + "x: " + aux->x + "\ny: " + aux->y + "\"];\n";
         aux = aux->next;
     }
     dot = dot + "{rank=same;\n";
     aux = head;
     while (aux != NULL) {
 
-        dot = dot + "\"" + aux->x+ "," + aux->y + "\"";
+        dot = dot + to_string(aux->id);
         if (aux->next != NULL) {
             dot = dot + "->";
         }

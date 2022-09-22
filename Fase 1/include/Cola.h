@@ -18,7 +18,7 @@ class Cola
             this->head = NULL;
             this->end = NULL;
         }
-        void push(string alto, string ancho, string x, string y);
+        void push(string alto, string ancho, string x, string y, int id);
         void pop();
         void ImprimirTuto();
         void GenerarGrafo();

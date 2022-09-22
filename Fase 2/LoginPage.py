@@ -48,7 +48,7 @@ class LoginForm:
         # USUARIO
         self.username_label = Label(self.lgn_frame, text='Usuario:', bg='#1f7a7a', fg='white',
                                     font=('yu gothic ui', 15, 'bold'))
-        self.username_label.place(x=600, y=400)
+        self.username_label.place(x=633, y=400)
 
         self.username_entry = Entry(self.lgn_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
                                     font=('yu gothic ui', 14, 'bold'))
