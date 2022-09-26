@@ -14,7 +14,7 @@ class nodointerno
         string nombre;
         string src;
         nodointerno*sig;
-        nodosimple() {
+        nodointerno() {
         sig = NULL;
         id = "";
         precio = "";

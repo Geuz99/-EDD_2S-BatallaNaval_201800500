@@ -3,6 +3,7 @@
 
 #include<stddef.h>
 #include<iostream>
+#include<string>
 
 #include "NodoLDobleCircular.h"
 #include"ListaPrincipal.h"
@@ -23,17 +24,14 @@ class LDobleCircular
             this->head = NULL;
             this->end = NULL;
         }
-        void insert(string nick, string password, string monedas, string edad);
+        void insertar(string nick, string password, string monedas, string edad);
         void imprimir();
         void editar(string nick, string password, string nicknew, string passwordnew, string edadnew);
         void buscar(string nick, string password, Cola colaTuto, ListaPrincipal listaArticulos, Pila pilaMov);
         void eliminar(string nick, string password);
         void GenerarGrafo();
         void Ascendente();
-        void Descendente();
-
-
-    protected:
+        void Descendente();   
 
     private:
 };

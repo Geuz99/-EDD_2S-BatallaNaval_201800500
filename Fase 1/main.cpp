@@ -3,13 +3,13 @@
 #include<nlohmann/json.hpp>
 #include<string>
 
-#include"LDobleCircular.h"
-#include"ListaInterna.h"
-#include"ListaPrincipal.h"
-#include"Cola.h"
-#include"Pila.h"
-#include"Lista.h"
-#include"ArbolB.h"
+#include"LDobleCircular.cpp"
+#include"ListaInterna.cpp"
+#include"ListaPrincipal.cpp"
+#include"Cola.cpp"
+#include"Pila.cpp"
+#include"Lista.cpp"
+#include"ArbolB.cpp"
 
 using namespace std;
 using namespace nlohmann;
@@ -51,10 +51,10 @@ int main(int argc, char const *argv[])
                 //cout<<"Ingrese la ruta del archivo: ";cin>>path;
                 //cout<<endl;
                 //"C:/Users/GEUZ99/Downloads/prueba.json"
-                ifstream archivo("C:/Users/GEUZ99/Downloads/prueba.json");
+                ifstream archivo("/home/geuz/Descargas/prueba.json");
                 json dato = json::parse(archivo);
                 for(int i=0;i<dato["usuarios"].size();i++){
-                    lista.insert(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
+                    lista.insertar(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
                     tree.insertar(id_usuarios, dato["usuarios"][i]["nick"].get<string>());
                     id_usuarios++;
                 }
@@ -79,7 +79,7 @@ int main(int argc, char const *argv[])
             cout<<">Ingrese su nick: ";cin>>nick;
             cout<<">Ingrese su contrasenia: ";cin>>password;
             cout<<">Ingrese su edad: ";cin>>edad;
-            lista.insert(nick, password, monedas, edad);
+            lista.insertar(nick, password, monedas, edad);
             cout<<"*********************************"<<endl;
 
             }
@@ -109,7 +109,7 @@ int main(int argc, char const *argv[])
             break;
 
         case 5:
-            cout<<"***************************************************************"<<endl;
+            cout<<"SEE YOU SOON"<<endl;
             break;
 
         default:
@@ -123,10 +123,11 @@ int main(int argc, char const *argv[])
     remove("Usuarios.png");
     remove("Articulos.dot");
     remove("Articulos.png");
-    remove("arbolb.dot");
-    remove("arbolb.png");
     remove("Tutorial.dot");
     remove("Tutorial.png");
+    remove("arbolb.dot");
+    remove("arbolb.png");
+    
     return 0;
 }
 

@@ -1,17 +1,15 @@
-#include "LDobleCircular.h"
+#include"LDobleCircular.h"
 #include"Cola.h"
 
-#include<string>
-#include<iostream>
+#include <string>
+#include <iostream>
 #include <fstream>
 #include <sstream>
 
 using namespace std;
-
-
 Cola cola;
 
-void LDobleCircular::insert(string nick, string password, string monedas, string edad){
+void LDobleCircular::insertar(string nick, string password, string monedas, string edad){
     NodoLDobleCircular *nuevo = new NodoLDobleCircular(nick, password, monedas, edad);
     if ((head==NULL) && (end==NULL)){
         head = nuevo;
