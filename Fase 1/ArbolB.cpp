@@ -1,9 +1,10 @@
 #include "ArbolB.h"
-
 #include <fstream>
-#include <string>
 #include <sstream>
+#include <string>
 #include <iostream>
+using namespace std;
+
 
 void ArbolB::insertar(int id, string nick) {
     NodoB* nodo = new NodoB(id, nick);
@@ -12,7 +13,7 @@ void ArbolB::insertar(int id, string nick) {
     } else {
         pair < NodoB*, pair<bool, bool>> ret = insertarCrearRama(nodo, raiz);
         NodoB* obj = ret.first;
-        if ((ret.second.first or ret.second.second) and obj != NULL) {
+        if ((ret.second.first || ret.second.second) && obj != NULL) {
             //cout << "se cambia de rama principal ID:" << obj->id << "\n";
             raiz = obj;
         }
@@ -41,7 +42,7 @@ pair<NodoB*, pair<bool, bool>> ArbolB::insertarCrearRama(NodoB* nodo, NodoB* ram
                 return ResultadoRama;
             } else if (nodo->id < temp->id) {
                 pair < NodoB*, pair<bool, bool>> ResultadoInsert = insertarCrearRama(nodo, temp->L);
-                if (ResultadoInsert.second.second and ResultadoInsert.first != NULL) {
+                if (ResultadoInsert.second.second && ResultadoInsert.first != NULL) {
                     ResultadoRama.second.second = true;
                     temp->L = ResultadoInsert.first;
                 }
@@ -59,7 +60,7 @@ pair<NodoB*, pair<bool, bool>> ArbolB::insertarCrearRama(NodoB* nodo, NodoB* ram
                 return ResultadoRama;
             } else if (temp->sig == NULL) {
                 pair < NodoB*, pair<bool, bool>> ResultadoInsert = insertarCrearRama(nodo, temp->R);
-                if (ResultadoInsert.second.second and ResultadoInsert.first != NULL) {
+                if (ResultadoInsert.second.second && ResultadoInsert.first != NULL) {
                     ResultadoRama.second.second = true;
                     temp->R = ResultadoInsert.first;
                 }
@@ -178,7 +179,7 @@ bool ArbolB::esHoja(NodoB* primero) {
     NodoB* aux = primero;
     while (aux != NULL) {
         //cout << "[" << aux->id << "]->";
-        if (aux->L != NULL or aux->R != NULL) {
+        if (aux->L != NULL || aux->R != NULL) {
             return false;
         }
         aux = aux->sig;

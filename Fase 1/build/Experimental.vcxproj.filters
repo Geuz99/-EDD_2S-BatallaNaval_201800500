@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\GEUZ99\Desktop\[EDD_2S]BatallaNaval_201800500\-EDD_2S-BatallaNaval_201800500\Fase 1\build\CMakeFiles\fed13271e8b9de62ae4d722dd46d0ba0\Experimental.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\GEUZ99\Desktop\[EDD_2S]BatallaNaval_201800500\-EDD_2S-BatallaNaval_201800500\Fase 1\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\GEUZ99\Desktop\[EDD_2S]BatallaNaval_201800500\-EDD_2S-BatallaNaval_201800500\Fase 1\build\CMakeFiles\Experimental" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{AF77FE63-E043-35F4-95BA-62780D2AEA29}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

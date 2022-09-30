@@ -1,15 +1,86 @@
 from tkinter import *
+from tkinter import messagebox
+from tkinter.filedialog import askopenfilename
+import requests
+
 from PIL import ImageTk, Image
+import AdminPage
+import UserPage
+
+base_url = 'http://192.168.1.9:18080'
 
 
-class LoginForm:
+def adminTop():
+    win = Toplevel()
+    AdminPage.AdminPage(win)
+    window.withdraw()
+    win.deiconify()
+
+
+def UserTop(user, password):
+    win = Toplevel()
+    UserPage.UserPAge(win, user, password)
+    window.withdraw()
+    win.deiconify()
+
+
+class CargaPage:
+    def __init__(self, window):
+        self.window = window
+        self.window.geometry('512x300')
+        self.window.resizable(0, 0)
+        self.window.title("Carga de usuarios")
+        self.window.iconbitmap('Imagenes\\icono.ico')
+
+        # FONDO DE PANTALLA
+        self.bg_frame = Image.open('Imagenes\\inicio.jpg')
+        photo = ImageTk.PhotoImage(self.bg_frame)
+        self.bg_panel = Label(self.window, image=photo)
+        self.bg_panel.image = photo
+        self.bg_panel.pack(fill='both', expand='yes')
+
+        # FRAME LOGIN
+        self.carga_frame = Frame(self.window, bg='#b3ffb3', width='300', height='500')
+        self.carga_frame.place(x=250, y=0)
+
+        # BOTON DE CARGAR
+        self.salir = Button(self.carga_frame, text='Cargar', bg='#00e600', fg='white',
+                            font=('yu gothic ui', 12, 'bold'), width=10, bd=0, cursor='hand2',
+                            activebackground='#3847ff', command=self.carga)
+        self.salir.place(x=85, y=75)
+
+        # BOTON DE SALIR
+        self.salir = Button(self.carga_frame, text='Salir', bg='#990000', fg='white',
+                            font=('yu gothic ui', 12, 'bold'), width=10, bd=0, cursor='hand2',
+                            activebackground='#3847ff', command=self.on_closing)
+        self.salir.place(x=85, y=185)
+
+    def carga(self):
+        filename = askopenfilename()
+        res = requests.get(f'{base_url}/carga/' + filename)
+        data = res.text
+        if data == 'Cargado con exito':
+            messagebox.showinfo("Diviertete", "Archivo cargado con exito")
+            win = Toplevel()
+            LoginPage(win)
+            window.withdraw()
+            win.deiconify()
+        else:
+            messagebox.showerror("ERROR", "El acrhivo no fue cargado con exito")
+
+    def on_closing(self):
+        exit(0)
+
+
+class LoginPage:
     def __init__(self, window):
         self.window = window
         self.window.geometry('1116x718')
         self.window.state('zoomed')
         self.window.resizable(0, 0)
-        self.window.title("")
+        self.window.title("cliente v.1")
         self.window.iconbitmap('Imagenes\\icono.ico')
+        self.window.protocol("WM_DELETE_WINDOW", self.on_closing)
 
         # FONDO DE PANTALLA
         self.bg_frame = Image.open('Imagenes\\bg1.jpeg')
@@ -78,15 +149,33 @@ class LoginForm:
 
         self.login = Button(self.lgn_button_label, text='INICIAR SESION', bg='#3047ff', fg='white',
                             font=('yu gothic ui', 12, 'bold'), width=25, bd=0, cursor='hand2',
-                            activebackground='#3847ff')
+                            activebackground='#3847ff', command=self.ingresar)
         self.login.place(relx=0.5, rely=0.5, anchor=CENTER)
 
+    def ingresar(self):
+        user = "EDD"
+        password = "edd123"
+        edad = "50"
+        if self.username_entry.get() == user and self.password_entry.get() == password:
+            adminTop()
+        else:
+            usuario = self.username_entry.get()
+            contra = self.password_entry.get()
+            res = requests.get(f'{base_url}/login/' + usuario + '/' + contra)
+            data = res.text
+            if data == 'correcto':
+                UserTop(usuario, contra)
+            else:
+                messagebox.showwarning("ERROR", "Usuario / clave Invalida")
 
-def page():
-    window = Tk()
-    LoginForm(window)
-    window.mainloop()
+    def on_closing(self):
+        exit(0)
 
 
 if __name__ == '__main__':
-    page()
+    window = Tk()
+    #CargaPage(window)
+    # LoginPage(window)
+    UserTop('geuz', 'loki')
+
+    window.mainloop()

@@ -65,6 +65,46 @@ void LDobleCircular::editar(string nick, string password, string nicknew, string
     }
 }
 
+string LDobleCircular::editar2(string nick, string password, string nicknew, string passwordnew, string edadnew){
+    NodoLDobleCircular *edit;
+    edit = head;
+    bool flag = false;
+    if(head!=NULL){
+        do{
+            if(edit->nick==nick){
+                edit->nick = nicknew;
+                edit->password = passwordnew;
+                edit->edad = edadnew;
+                flag = true;                
+            }
+            edit = edit->next;
+
+        }while(edit!=head && flag != true);
+        if(!flag){
+            return "Error";
+        }
+    }
+    return "Editado";
+}
+
+string LDobleCircular::buscar(string nick, string password){
+    NodoLDobleCircular *buscar;
+    buscar = head;
+    bool flag = false;
+    if(head!=NULL){
+        do{
+            if(buscar->nick==nick && buscar->password==password){
+                flag = true;               
+            }
+            buscar = buscar->next;
+        }while(buscar!=head && flag!=true);
+        if(!flag){
+            return "not found";
+        }
+    }        
+    return "found";
+}
+
 void LDobleCircular::buscar(string nick, string password, Cola colaTuto, ListaPrincipal listaArticulos, Pila pilaMov){
     int opc = 0;
     NodoLDobleCircular *buscar;
@@ -234,7 +274,7 @@ void LDobleCircular::GenerarGrafo(){
 
      //------->escribir archivo
     ofstream file;
-    file.open("Usuarios.dot");
+    file.open("C:/Users/GEUZ99/Desktop/[EDD_2S]BatallaNaval_201800500/-EDD_2S-BatallaNaval_201800500/Fase 1/Usuarios.dot");
     file << dot;
     file.close();
 
@@ -282,6 +322,44 @@ void LDobleCircular::Ascendente(){
         } while (aux != head);
 }
 
+string LDobleCircular::Ascendente2(){
+    NodoLDobleCircular *aux = head;
+    NodoLDobleCircular *tem;
+    string nick, password, monedas, edad;
+    string data = "";
+    do{
+        tem = aux->next;
+        while(tem!=head){
+            if(stoi(aux->edad) > stoi(tem->edad)){
+                nick = aux->nick;
+                password = aux->password;
+                monedas = aux->monedas;
+                edad = aux->edad;
+
+                aux->nick = tem->nick;
+                aux->password = tem->password;
+                aux->monedas = tem->monedas;
+                aux->edad = tem->edad;
+
+                tem->nick = nick;
+                tem->password = password;
+                tem->monedas = monedas;
+                tem->edad = edad;
+            }
+            tem = tem->next;
+        }
+        aux = aux->next;
+        tem = aux->next;
+    }while(tem!=head);
+    aux = head;
+    do
+        {
+            data = data + "nick: " + aux->nick + ", password: " + aux->password + ", monedas: " + aux->monedas + ", edad: " + aux->edad + "\n";
+            aux = aux->next;
+        } while (aux != head);
+    return data;
+}
+
 void LDobleCircular::Descendente(){
     NodoLDobleCircular *aux = head;
     NodoLDobleCircular *tem;
@@ -316,6 +394,45 @@ void LDobleCircular::Descendente(){
             cout<<"nick: "<<aux->nick<<", password: "<<aux->password<<", monedas: "<<aux->monedas<<", edad: "<<aux->edad<<endl;
             aux = aux->next;
         } while (aux != head);
+}
+
+string LDobleCircular::Descendente2(){
+    NodoLDobleCircular *aux = head;
+    NodoLDobleCircular *tem;
+    string nick, password, monedas, edad;
+     string data = "";
+    do{
+        tem = aux->next;
+        while(tem!=head){
+            if(stoi(aux->edad) < stoi(tem->edad)){
+                nick = aux->nick;
+                password = aux->password;
+                monedas = aux->monedas;
+                edad = aux->edad;
+
+                aux->nick = tem->nick;
+                aux->password = tem->password;
+                aux->monedas = tem->monedas;
+                aux->edad = tem->edad;
+
+                tem->nick = nick;
+                tem->password = password;
+                tem->monedas = monedas;
+                tem->edad = edad;
+            }
+            tem = tem->next;
+        }
+        aux = aux->next;
+        tem = aux->next;
+    }while(tem!=head);
+    aux = head;
+    do
+        {
+            data = data + "nick: " + aux->nick + ", password: " + aux->password + ", monedas: " + aux->monedas + ", edad: " + aux->edad + "\n";
+            aux = aux->next;
+        } while (aux != head);
+
+    return data;
 }
 
 

@@ -27,12 +27,15 @@ class LDobleCircular
         void insertar(string nick, string password, string monedas, string edad);
         void imprimir();
         void editar(string nick, string password, string nicknew, string passwordnew, string edadnew);
+        string editar2(string nick, string password, string nicknew, string passwordnew, string edadnew);
         void buscar(string nick, string password, Cola colaTuto, ListaPrincipal listaArticulos, Pila pilaMov);
         void eliminar(string nick, string password);
         void GenerarGrafo();
         void Ascendente();
+        string Ascendente2();
         void Descendente();   
-
+        string Descendente2();
+        string buscar(string nick, string password);
     private:
 };
 

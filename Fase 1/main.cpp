@@ -10,48 +10,97 @@
 #include"Pila.cpp"
 #include"Lista.cpp"
 #include"ArbolB.cpp"
+#include "crow.h"
 
 using namespace std;
-using namespace nlohmann;
+using json = nlohmann::json;
+
+int opc = 0;
+LDobleCircular lista;
+ListaPrincipal listaArticulos;
+Cola colaTuto;
+Pila pilaMov;
+Lista listaMov;
+int id_usuarios = 0;
+int id_tutorial = 0;    
+ArbolB tree;
+crow::SimpleApp app;
 
 
 int main(int argc, char const *argv[])
-{
+{    
 
-    int opc = 0;
-    LDobleCircular lista;
-    ListaPrincipal listaArticulos;
-    Cola colaTuto;
-    Pila pilaMov;
-    Lista listaMov;
-    int id_usuarios = 0;
-    int id_tutorial = 0;
-    ArbolB tree;
+    CROW_ROUTE(app, "/")([](){        
+        return "HOLA PUTITA";
+    });
+
+    CROW_ROUTE(app, "/carga/<path>")([](string path){
+        ifstream archivo(path);  
+        json dato = json::parse(archivo);
+        for(int i=0;i<dato["usuarios"].size();i++){  
+            lista.insertar(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());          
+            tree.insertar(id_usuarios, dato["usuarios"][i]["nick"].get<string>());
+            id_usuarios++;
+            }
+        return "Cargado con exito";
+    });
+
+    CROW_ROUTE(app, "/login/<string>/<string>")([](string user, string password){              
+        if (lista.buscar(user, password) == "found"){
+            return "correcto";
+        }else{
+            return "incorrecto";
+        }
+        
+    });
+
+    CROW_ROUTE(app, "/login/editar/<string>/<string>/<string>/<string>/<string>")([](string user, string password, string nicknew, string passwordnew, string edadnew){              
+        string info = lista.editar2(user, password, nicknew, passwordnew, edadnew);
+        if (info == "Error"){
+            return "Error";
+        }else{   
+            return "editado";
+        }
+        
+    });
+
+    CROW_ROUTE(app, "/usuarios/ascendente")([](){    
+        string data = lista.Ascendente2();   
+        return data;
+    });
+
+    CROW_ROUTE(app, "/usuarios/descendente")([](){    
+        string data = lista.Descendente2();   
+        return data;
+    });
+
+    CROW_ROUTE(app, "/arbolb")([](){  
+        lista.GenerarGrafo();      
+        return "C:/Users/GEUZ99/Desktop/[EDD_2S]BatallaNaval_201800500/-EDD_2S-BatallaNaval_201800500/Fase 1/Usuarios.dot";
+    });
+
+    app.port(18080).run();    
 
 
 
     do
     {
-        cout<<"********** Menu **********"<<endl;
-        cout<<"*                        *"<<endl;
-        cout<<"1. Carga masiva          *"<<endl;
-        cout<<"2. Registrar usuario     *"<<endl;
-        cout<<"3. Login                 *"<<endl;
-        cout<<"4. Reportes              *"<<endl;
-        cout<<"5. Salir del juego       *"<<endl;
-        cout<<"*                        *"<<endl;
-        cout<<"**************************"<<endl;
+        cout<<"             ********** Menu **********"<<endl;
+        cout<<"             *                        *"<<endl;
+        cout<<"             1.   Carga masiva        *"<<endl;
+        cout<<"             2.   Registrar usuario   *"<<endl;
+        cout<<"             3.   Login               *"<<endl;
+        cout<<"             4.   Reportes            *"<<endl;
+        cout<<"             5.   Salir del juego     *"<<endl;
+        cout<<"             *                        *"<<endl;
+        cout<<"             **************************"<<endl;
         cin>>opc;
 
         switch (opc)
         {
         case 1:
-            {
-                string path;
-                //cout<<"Ingrese la ruta del archivo: ";cin>>path;
-                //cout<<endl;
-                //"C:/Users/GEUZ99/Downloads/prueba.json"
-                ifstream archivo("/home/geuz/Descargas/prueba.json");
+            {                              
+                ifstream archivo("C:/Users/GEUZ99/Downloads/prueba.json");                
                 json dato = json::parse(archivo);
                 for(int i=0;i<dato["usuarios"].size();i++){
                     lista.insertar(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
@@ -96,7 +145,9 @@ int main(int argc, char const *argv[])
             }
             break;
 
-        case 4:
+        case 4:         
+
+
             lista.GenerarGrafo();
             listaArticulos.GenerarGrafo();
             colaTuto.GenerarGrafo();
@@ -119,7 +170,8 @@ int main(int argc, char const *argv[])
         }
 
     } while (opc != 5);
-    remove("Usuarios.dot");
+    
+    remove("C:/Users/GEUZ99/Desktop/[EDD_2S]BatallaNaval_201800500/-EDD_2S-BatallaNaval_201800500/Fase 1/Usuarios.dot");
     remove("Usuarios.png");
     remove("Articulos.dot");
     remove("Articulos.png");
