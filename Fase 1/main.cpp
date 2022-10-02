@@ -26,27 +26,25 @@ int id_tutorial = 0;
 ArbolB tree;
 crow::SimpleApp app;
 
-
 int main(int argc, char const *argv[])
 {    
-
-    CROW_ROUTE(app, "/")([](){        
-        return "HOLA PUTITA";
+    CROW_ROUTE(app, "/arbolb")([](){        
+        tree.Grafo();   
+        return "C:/Users/GEUZ99/Desktop/[EDD_2S]BatallaNaval_201800500/-EDD_2S-BatallaNaval_201800500/Fase 1/arbolb.dot";
     });
 
     CROW_ROUTE(app, "/carga/<path>")([](string path){
         ifstream archivo(path);  
         json dato = json::parse(archivo);
-        for(int i=0;i<dato["usuarios"].size();i++){  
-            lista.insertar(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());          
-            tree.insertar(id_usuarios, dato["usuarios"][i]["nick"].get<string>());
+        for(int i=0;i<dato["usuarios"].size();i++){              
+            tree.insertar(id_usuarios, dato["usuarios"][i]["nick"].get<string>(), dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
             id_usuarios++;
             }
         return "Cargado con exito";
     });
 
     CROW_ROUTE(app, "/login/<string>/<string>")([](string user, string password){              
-        if (lista.buscar(user, password) == "found"){
+        if (tree.buscar(user, password) == "found"){
             return "correcto";
         }else{
             return "incorrecto";
@@ -55,12 +53,8 @@ int main(int argc, char const *argv[])
     });
 
     CROW_ROUTE(app, "/login/editar/<string>/<string>/<string>/<string>/<string>")([](string user, string password, string nicknew, string passwordnew, string edadnew){              
-        string info = lista.editar2(user, password, nicknew, passwordnew, edadnew);
-        if (info == "Error"){
-            return "Error";
-        }else{   
-            return "editado";
-        }
+        string info = tree.editar(user, password, nicknew, passwordnew, edadnew);       
+        return info;
         
     });
 
@@ -72,11 +66,6 @@ int main(int argc, char const *argv[])
     CROW_ROUTE(app, "/usuarios/descendente")([](){    
         string data = lista.Descendente2();   
         return data;
-    });
-
-    CROW_ROUTE(app, "/arbolb")([](){  
-        lista.GenerarGrafo();      
-        return "C:/Users/GEUZ99/Desktop/[EDD_2S]BatallaNaval_201800500/-EDD_2S-BatallaNaval_201800500/Fase 1/Usuarios.dot";
     });
 
     app.port(18080).run();    
@@ -104,7 +93,7 @@ int main(int argc, char const *argv[])
                 json dato = json::parse(archivo);
                 for(int i=0;i<dato["usuarios"].size();i++){
                     lista.insertar(dato["usuarios"][i]["nick"].get<string>(),dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
-                    tree.insertar(id_usuarios, dato["usuarios"][i]["nick"].get<string>());
+                    
                     id_usuarios++;
                 }
                 for(int i=0;i<dato["articulos"].size();i++){

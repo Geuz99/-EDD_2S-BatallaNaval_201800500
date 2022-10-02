@@ -169,12 +169,16 @@ class LoginPage:
                 messagebox.showwarning("ERROR", "Usuario / clave Invalida")
 
     def on_closing(self):
-        exit(0)
+        res = messagebox.askquestion("Salir", "Estas seguro que quieres salir de la aplicacion?")
+        if res == 'yes':
+            exit(0)
+        elif res == 'no':
+            print('no')
 
 
 if __name__ == '__main__':
     window = Tk()
-    #CargaPage(window)
+    # CargaPage(window)
     # LoginPage(window)
     UserTop('geuz', 'loki')
 

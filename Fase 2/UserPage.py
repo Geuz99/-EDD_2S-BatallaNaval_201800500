@@ -16,7 +16,7 @@ class UserPAge:
         self.window.resizable(0, 0)
         self.window.title('Profile: ' + user)
         self.window.iconbitmap('Imagenes\\icono.ico')
-        self.window.protocol("WM_DELETE_WINDOW", self.salir)
+        self.window.protocol("WM_DELETE_WINDOW", self.on_closing)
 
         # FONDO DE PANTALLA
         self.bg_frame = Image.open('Imagenes\\bg1.jpeg')
@@ -67,13 +67,13 @@ class UserPAge:
         # BOTON VER ARTICULOS DE LA TIENDA
         self.store_button = Button(self.btsUsers_frame, text='Tienda', bg='#ff6600', fg='black',
                                    font=('yu gothic ui', 12, 'bold'), width=15, height=4, bd=0, cursor="pirate",
-                                   activebackground='#3847ff', command=self.salir)
+                                   activebackground='#3847ff', command=self.store)
         self.store_button.place(x=265, y=330)
 
         # BOTON REALIZAR MOVIMIENTOS
         self.move_button = Button(self.btsUsers_frame, text='Realizar movimientos', bg='#0000ff', fg='white',
                                   font=('yu gothic ui', 12, 'bold'), width=40, height=2, bd=0, cursor="pirate",
-                                  activebackground='#3847ff', command=self.salir)
+                                  activebackground='#3847ff', command=self.startMoves)
         self.move_button.place(x=44, y=460)
 
         # BOTON SALIR
@@ -114,7 +114,9 @@ class UserPAge:
         res = messagebox.askquestion("ATENCION!!!", "Esta a punto de eliminar su cuenta definitivamente. Esta seguro "
                                                     "con la accion que quiere realizar?")
         if res == 'yes':
-            print('eliminada')
+            messagebox.showwarning("ELIMINADA", "Lamentamos que hallas decidido dejarnos. Esperemos pronto tenerte "
+                                                "otra vez de vuelta. Hasta pronto...!")
+            self.window.destroy()
         elif res == 'no':
             print('no')
         else:
@@ -124,5 +126,21 @@ class UserPAge:
         print('tuto')
 
     def salir(self):
-        # self.window.destroy()
-        exit(0)
+        self.window.destroy()
+
+    def on_closing(self):
+        res = messagebox.askquestion("Salir", "Estas seguro que quieres salir de la aplicacion?")
+        if res == 'yes':
+            exit(0)
+        elif res == 'no':
+            print('no')
+
+    def store(self):
+        print('store')
+
+    def startMoves(self):
+        print('start')
+
+
+
+

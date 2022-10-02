@@ -130,4 +130,8 @@ class AdminPage:
         img.show()
 
     def salir(self):
-        exit(0)
+        res = messagebox.askquestion("Salir", "Estas seguro que quieres salir de la aplicacion?")
+        if res == 'yes':
+            exit(0)
+        elif res == 'no':
+            print('no')
