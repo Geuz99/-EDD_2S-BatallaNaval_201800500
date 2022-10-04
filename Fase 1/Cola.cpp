@@ -65,6 +65,19 @@ void Cola::ImprimirTuto() {
     cout<<"-------------------------------------------"<<endl;
 }
 
+string Cola::Tutorial(){
+    NodoCola *aux = head;
+    string tutorial = "";
+    tutorial = tutorial + "Ancho Recomendado: " + aux->ancho + "\n";
+    tutorial = tutorial + "Alto Recomendado: " + aux->alto + "\n";
+    tutorial = tutorial + "Movimientos:" + "\n";
+    while (aux != NULL) {
+        tutorial = tutorial + "   ******(" + aux->x + "),(" + aux->y + ")******  \n";
+        aux = aux->next;
+    }
+    return tutorial;
+}
+
 void Cola::GenerarGrafo(){
     string dot = "";
     dot = dot + "digraph G {\n";

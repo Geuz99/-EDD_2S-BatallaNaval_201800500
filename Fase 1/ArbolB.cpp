@@ -11,23 +11,24 @@ string ArbolB::buscar(string nick, string password){
 }
 
 string ArbolB::buscarRamas(NodoB*rama, string nick, string password){
-    string aux = "";
+    string info = "";
     if (rama != NULL){
-        aux = buscarConexionesRamas(rama, nick, password);
+        info = buscarConexionesRamas(rama, nick, password);
         NodoB* aux = rama;
+        string flag = "";
         while(aux != NULL){
             if(aux->L != NULL){
                 buscarRamas(aux->L, nick, password);
             }
             if(aux->sig == NULL){
                 if(aux->R != NULL){
-                    buscarRamas(aux->R, nick, password);
+                   buscarRamas(aux->R, nick, password);
                 }
             }
             aux = aux->sig;
         }
     }
-    return aux;
+    return info;
 }
 
 string ArbolB::buscarConexionesRamas(NodoB*rama, string nick, string password){
@@ -35,22 +36,22 @@ string ArbolB::buscarConexionesRamas(NodoB*rama, string nick, string password){
     if (rama != NULL){
         NodoB*aux = rama;
         do{
-            if(aux->sig != NULL){
+            if(aux->sig != NULL ){
+                // cout<<aux->nick<<" "<<aux->password<<endl;
                 if(aux->nick == nick && aux->password == password){
                     flag = true;
-                }
-                //cout<<aux->nick<<endl;
+                }                
             }else{
+                // cout<<aux->nick<<" "<<aux->password<<endl;
                 if(aux->nick == nick && aux->password == password){
                     flag = true;
-                }
-                //cout<<aux->nick<<endl;
+                }                
             }
             aux = aux->sig;
         }while(aux != NULL && flag != true);
-        if(!flag){
+        /*if(!flag){
             return "not found";
-        }
+        }*/
     }
     return "found";
 }
@@ -92,7 +93,6 @@ string ArbolB::editar3(NodoB* rama, string nick, string password, string nicknew
                     aux->edad = edadnew;
                     flag = true;
                 }
-                //cout<<aux->nick<<endl;
             }else{
                 if(aux->nick == nick){
                     aux->nick = nicknew;
@@ -100,13 +100,12 @@ string ArbolB::editar3(NodoB* rama, string nick, string password, string nicknew
                     aux->edad = edadnew;
                     flag = true;
                 }
-                //cout<<aux->nick<<endl;
             }
             aux = aux->sig;
         }while(aux != NULL && flag != true);
-        if(!flag){
+        /*if(!flag){
             return "error";
-        }
+        }*/
     }
     return "editado";
 }

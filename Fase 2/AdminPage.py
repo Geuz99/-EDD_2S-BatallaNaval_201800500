@@ -1,3 +1,4 @@
+from os import remove
 from tkinter import *
 from tkinter import messagebox
 
@@ -99,27 +100,30 @@ class AdminPage:
         # BOTON DE SALIR
         self.salir = Button(self.btsUsers_frame, text='Salir', bg='#990000', fg='white',
                             font=('yu gothic ui', 12, 'bold'), width=10, bd=0, cursor='hand2',
-                            activebackground='#3847ff', command=self.salir)
+                            activebackground='#3847ff', command=self.salir2)
         self.salir.place(x=175, y=650)
 
-        # SCROLLBAR DE LOS USUARIOS
-        self.scrollbar = Scrollbar(self.window)
-        self.scrollbar.pack(side=RIGHT, fill=Y)
-        self.mylist = Listbox(self.window, yscrollcommand=self.scrollbar.set)
-        self.mylist.place(x=570, y=95, width=450, height=550)
-        self.scrollbar.config(command=self.mylist.yview)
+        # LOS USUARIOS
+        self.configfile = Text(self.window, wrap=WORD)
+        self.configfile.place(x=540, y=75, width=520, height=590)
 
     def ascendente(self):
-        self.mylist.delete('0', END)
+        self.configfile.delete("1.0","end")
         res = requests.get(f'{base_url}/usuarios/ascendente')
         data = res.text
-        self.mylist.insert(END, data)
+        with open('Usuarios Ascendentes', 'w') as f:
+            f.write(data)
+        with open('Usuarios Ascendentes', 'r') as f:
+            self.configfile.insert(INSERT, f.read())
 
     def descendente(self):
-        self.mylist.delete('0', END)
+        self.configfile.delete("1.0","end")
         res = requests.get(f'{base_url}/usuarios/descendente')
         data = res.text
-        self.mylist.insert(END, data)
+        with open('Usuarios Descendentes', 'w') as f:
+            f.write(data)
+        with open('Usuarios Descendentes', 'r') as f:
+            self.configfile.insert(INSERT, f.read())
 
     def arbolb(self):
         res = requests.get(f'{base_url}/arbolb')
@@ -132,6 +136,16 @@ class AdminPage:
     def salir(self):
         res = messagebox.askquestion("Salir", "Estas seguro que quieres salir de la aplicacion?")
         if res == 'yes':
-            exit(0)
+            try:
+                remove("Usuarios Ascendentes")
+                remove("Usuarios Descendentes")
+                remove('arbolb.dot')
+                remove('arbolb.png')
+            except FileNotFoundError as e:
+                print(e)
+                exit(0)
         elif res == 'no':
             print('no')
+
+    def salir2(self):
+        self.window.destroy()

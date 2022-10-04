@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include<string>
+#include <vector>
 
 #include "nodoprincipal.h"
 
@@ -24,6 +25,7 @@ class ListaPrincipal
         nodoprincipal * BuscarPrincipal(nodoprincipal*inicioL, string categoria);
         void Ascendente();
         void Descendente();
+        string Categorias();
 
     private:
 };

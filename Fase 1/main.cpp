@@ -28,6 +28,11 @@ crow::SimpleApp app;
 
 int main(int argc, char const *argv[])
 {    
+    CROW_ROUTE(app, "/tutorial")([](){ 
+        string info = colaTuto.Tutorial();
+        return info;
+    });
+
     CROW_ROUTE(app, "/arbolb")([](){        
         tree.Grafo();   
         return "C:/Users/GEUZ99/Desktop/[EDD_2S]BatallaNaval_201800500/-EDD_2S-BatallaNaval_201800500/Fase 1/arbolb.dot";
@@ -38,8 +43,19 @@ int main(int argc, char const *argv[])
         json dato = json::parse(archivo);
         for(int i=0;i<dato["usuarios"].size();i++){              
             tree.insertar(id_usuarios, dato["usuarios"][i]["nick"].get<string>(), dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
+            lista.insertar(dato["usuarios"][i]["nick"].get<string>(), dato["usuarios"][i]["password"].get<string>(),dato["usuarios"][i]["monedas"].get<string>(),dato["usuarios"][i]["edad"].get<string>());
             id_usuarios++;
-            }
+        }
+        for(int i=0;i<dato["articulos"].size();i++){
+            listaArticulos.Insertar(dato["articulos"][i]["id"].get<string>(),dato["articulos"][i]["precio"].get<string>(), dato["articulos"][i]["nombre"].get<string>(), dato["articulos"][i]["src"].get<string>(),dato["articulos"][i]["categoria"].get<string>());
+
+        }
+        string ancho = dato["tutorial"]["ancho"].get<string>();
+        string alto = dato["tutorial"]["alto"].get<string>();
+        for(int i=0;i<dato["tutorial"]["movimientos"].size();i++){
+            colaTuto.push(alto, ancho, dato["tutorial"]["movimientos"][i]["x"].get<string>(), dato["tutorial"]["movimientos"][i]["y"].get<string>(), id_tutorial);
+            id_tutorial++;
+        }    
         return "Cargado con exito";
     });
 
@@ -66,6 +82,11 @@ int main(int argc, char const *argv[])
     CROW_ROUTE(app, "/usuarios/descendente")([](){    
         string data = lista.Descendente2();   
         return data;
+    });
+
+    CROW_ROUTE(app, "/tienda")([](){    
+        string data = listaArticulos.Categorias();           
+        return  data;
     });
 
     app.port(18080).run();    

@@ -93,6 +93,7 @@ string LDobleCircular::buscar(string nick, string password){
     bool flag = false;
     if(head!=NULL){
         do{
+            cout<<buscar->nick<<" "<<buscar->password<<endl;
             if(buscar->nick==nick && buscar->password==password){
                 flag = true;               
             }

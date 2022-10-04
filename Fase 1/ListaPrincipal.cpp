@@ -6,6 +6,26 @@
 
 using namespace std;
 
+string ListaPrincipal::Categorias(){
+    string categoria = "";
+    nodoprincipal*aux = Inicio;
+     while (aux != NULL) {
+        categoria = categoria + "           CATEGORIA: " + aux->valor + "\n"; 
+        categoria = categoria + "---------------------------------------------------------------------\n";            
+        nodointerno * auxI = aux->listainterna.Inicio;
+        while (auxI != NULL) {
+            categoria = categoria + "* " + auxI->nombre + ", precio: " + auxI->precio +  "      ";            
+            auxI = auxI->sig;
+        }
+        aux = aux->sig;
+        categoria = categoria + "\n";
+        categoria = categoria + "\n";
+        categoria = categoria + "\n";
+        
+     }
+     return categoria;
+}
+
 void ListaPrincipal::Imprimir() {
     nodoprincipal*aux = Inicio;
     while (aux != NULL) {

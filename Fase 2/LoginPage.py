@@ -19,7 +19,7 @@ def adminTop():
 
 def UserTop(user, password):
     win = Toplevel()
-    UserPage.UserPAge(win, user, password)
+    UserPage.UserPage(win, user, password)
     window.withdraw()
     win.deiconify()
 
@@ -178,8 +178,8 @@ class LoginPage:
 
 if __name__ == '__main__':
     window = Tk()
-    # CargaPage(window)
+    CargaPage(window)
     # LoginPage(window)
-    UserTop('geuz', 'loki')
+    # UserTop('geuz', 'loki')
 
     window.mainloop()
