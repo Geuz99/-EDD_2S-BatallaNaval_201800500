@@ -1,0 +1,38 @@
+digraph prueba{
+node [shape=box3d, style=filled, color=olivedrab2, fillcolor=aquamarine];
+rankdir=LR
+ vertice0 [label = "0"];
+v0No3[label = "3"];
+v0No2[label = "2"];
+v0No1[label = "1"];
+vertice1 [label = "1"];
+v1No1[label = "1"];
+v1No1[label = "1"];
+v1No0[label = "0"];
+vertice2 [label = "2"];
+v2No0[label = "0"];
+vertice3 [label = "3"];
+v3No0[label = "0"];
+vertice4 [label = "4"];
+vertice5 [label = "5"];
+vertice6 [label = "6"];
+vertice7 [label = "7"];
+vertice8 [label = "8"];
+vertice9 [label = "9"];
+v9No10[label = "10"];
+vertice10 [label = "10"];
+v10No9[label = "9"];
+v10No10[label = "10"];
+v10No10[label = "10"];
+vertice0->v0No3->v0No2->v0No1
+vertice1->v1No1->v1No1->v1No0
+vertice2->v2No0
+vertice3->v3No0
+vertice4
+vertice5
+vertice6
+vertice7
+vertice8
+vertice9->v9No10
+vertice10->v10No9->v10No10->v10No10
+}

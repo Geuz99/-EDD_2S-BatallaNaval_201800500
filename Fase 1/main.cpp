@@ -60,7 +60,7 @@ int main(int argc, char const *argv[])
     });
 
     CROW_ROUTE(app, "/login/<string>/<string>")([](string user, string password){              
-        if (tree.buscar(user, password) == "found"){
+        if (lista.buscar(user, password) == "found"){
             return "correcto";
         }else{
             return "incorrecto";
@@ -69,9 +69,17 @@ int main(int argc, char const *argv[])
     });
 
     CROW_ROUTE(app, "/login/editar/<string>/<string>/<string>/<string>/<string>")([](string user, string password, string nicknew, string passwordnew, string edadnew){              
-        string info = tree.editar(user, password, nicknew, passwordnew, edadnew);       
+        string info = lista.editar2(user, password, nicknew, passwordnew, edadnew);       
         return info;
         
+    });
+
+    CROW_ROUTE(app, "/login/eliminar/<string>/<string>")([](string user, string password){              
+        if(lista.eliminar2(user, password) == "eliminado"){
+            return "correcto";
+        }else{
+            return "incorrecto";
+        }        
     });
 
     CROW_ROUTE(app, "/usuarios/ascendente")([](){    

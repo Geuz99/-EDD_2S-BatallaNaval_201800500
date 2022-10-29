@@ -1,0 +1,14 @@
+digraph G {
+node[shape=record]
+		//Agregar Nodos Rama
+R0000027733A9E8F0[label="<C1>|2 usr: Garrett9497|<C2>|5 usr: Pam8878|<C3>|8 usr: Long5198|<C4>"];
+R0000027733A9EC20[label="0 usr: Hoover9876|1 usr: Silva5379"];
+R0000027733A9D4C0[label="3 usr: Gillespie2277|4 usr: Isabelle7888"];
+R0000027733A9DD40[label="6 usr: Scott4859|7 usr: Bell4469"];
+R0000027733A9DE50[label="9 usr: Ladonna861|10 usr: Spence5777"];
+		//Agregar conexiones
+R0000027733A9E8F0:C1->R0000027733A9EC20;
+R0000027733A9E8F0:C2->R0000027733A9D4C0;
+R0000027733A9E8F0:C3->R0000027733A9DD40;
+R0000027733A9E8F0:C4->R0000027733A9DE50;
+}

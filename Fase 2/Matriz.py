@@ -164,16 +164,6 @@ class Matriz():
             aux = aux.siguiente
         return dot
 
-    def generarCol(self):
-        aux2 = self.root
-        aux = aux2.siguiente
-        dot = ""
-        dot = dot + "node [shape=component, style=filled, color=blue, fillcolor=lightsteelblue1];\n"
-        while aux is not None:
-            dot = dot + "C" + str(aux.x) + aux.dato + "[label=\"" + "[(" + "1," + str(aux.x) + ")]" + "\"];\n"
-            aux = aux.siguiente
-        return dot
-
     def generarFila(self):
         aux2 = self.root
         aux = aux2.abajo

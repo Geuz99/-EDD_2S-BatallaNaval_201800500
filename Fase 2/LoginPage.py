@@ -178,8 +178,8 @@ class LoginPage:
 
 if __name__ == '__main__':
     window = Tk()
-    CargaPage(window)
+    # CargaPage(window)
     # LoginPage(window)
-    # UserTop('geuz', 'loki')
+    UserTop('geuz', 'loki')
 
     window.mainloop()

@@ -30,6 +30,7 @@ class LDobleCircular
         string editar2(string nick, string password, string nicknew, string passwordnew, string edadnew);
         void buscar(string nick, string password, Cola colaTuto, ListaPrincipal listaArticulos, Pila pilaMov);
         void eliminar(string nick, string password);
+        string eliminar2(string nick, string password);
         void GenerarGrafo();
         void Ascendente();
         string Ascendente2();

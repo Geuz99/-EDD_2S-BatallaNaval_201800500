@@ -84,7 +84,7 @@ string LDobleCircular::editar2(string nick, string password, string nicknew, str
             return "Error";
         }
     }
-    return "Editado";
+    return "editado";
 }
 
 string LDobleCircular::buscar(string nick, string password){
@@ -232,6 +232,40 @@ void LDobleCircular::eliminar(string nick, string password){
         }while(actual!=head && flag!=true);
     }if(!flag){
         cout<<"HA OCURRIDO UN ERROR"<<endl;
+    }
+
+}
+
+string LDobleCircular::eliminar2(string nick, string password){
+    NodoLDobleCircular *actual;
+    NodoLDobleCircular *anterior;
+    actual = head;
+    anterior = NULL;
+    bool flag = false;
+    if (head!=NULL){
+        do{
+            if(actual->nick==nick && actual->password==password){
+                if(actual==head){
+                    head = head->next;
+                    head->prev = end;
+                    end->next = head;
+                }else if(actual==end){
+                    end = anterior;
+                    end->next = head;
+                    head->prev = end;
+                }else{
+                    anterior->next = actual->next;
+                    actual->next->prev = anterior;
+                }
+                flag = true;
+                return "eliminado";
+
+            }
+            anterior = actual;
+            actual = actual->next;
+        }while(actual!=head && flag!=true);
+    }if(!flag){
+        return "error";
     }
 
 }
