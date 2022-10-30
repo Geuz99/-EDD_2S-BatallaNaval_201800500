@@ -68,6 +68,11 @@ int main(int argc, char const *argv[])
         
     });
 
+    CROW_ROUTE(app, "/login/tokens/<string>/<string>")([](string user, string password){              
+        return lista.dame_tokens(user, password);
+        
+    });
+
     CROW_ROUTE(app, "/login/editar/<string>/<string>/<string>/<string>/<string>")([](string user, string password, string nicknew, string passwordnew, string edadnew){              
         string info = lista.editar2(user, password, nicknew, passwordnew, edadnew);       
         return info;
@@ -95,6 +100,11 @@ int main(int argc, char const *argv[])
     CROW_ROUTE(app, "/tienda")([](){    
         string data = listaArticulos.Categorias();           
         return  data;
+    });
+
+    CROW_ROUTE(app, "/categorias")([](){    
+        string data = listaArticulos.dameCategorias();           
+        return data;
     });
 
     app.port(18080).run();    

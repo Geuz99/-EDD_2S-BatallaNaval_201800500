@@ -16,9 +16,9 @@ class Graph:
         node.next = self.graph[s]
         self.graph[s] = node
 
-        node = NodoAdy(s)
-        node.next = self.graph[d]
-        self.graph[d] = node
+        # node = NodoAdy(s)
+        # node.next = self.graph[d]
+        # self.graph[d] = node
 
     # Print the graph
     def print_agraph(self):
@@ -70,7 +70,7 @@ class Graph:
             while temp:
                 cadena = cadena + "i" + str(temp.vertex) + "->"
                 temp = temp.next
-        cadena = cadena + "i0 \n}"
+        cadena = cadena + "i1 \n}"
 
         with open('Grapho.dot', 'w') as f:
             f.write(cadena)

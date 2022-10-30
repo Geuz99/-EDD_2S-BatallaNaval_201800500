@@ -17,9 +17,9 @@ def adminTop():
     win.deiconify()
 
 
-def UserTop(user, password):
+def UserTop(user, password, tokens):
     win = Toplevel()
-    UserPage.UserPage(win, user, password)
+    UserPage.UserPage(win, user, password, tokens)
     window.withdraw()
     win.deiconify()
 
@@ -164,7 +164,9 @@ class LoginPage:
             res = requests.get(f'{base_url}/login/' + usuario + '/' + contra)
             data = res.text
             if data == 'correcto':
-                UserTop(usuario, contra)
+                res_tokens = requests.get(f'{base_url}/login/tokens/' + usuario + '/' + contra)
+                tokens = res_tokens.text
+                UserTop(usuario, contra, tokens)
             else:
                 messagebox.showwarning("ERROR", "Usuario / clave Invalida")
 
@@ -180,6 +182,6 @@ if __name__ == '__main__':
     window = Tk()
     # CargaPage(window)
     # LoginPage(window)
-    UserTop('geuz', 'loki')
+    UserTop('geuz', 'loki', "5000")
 
     window.mainloop()

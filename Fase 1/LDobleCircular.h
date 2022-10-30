@@ -37,6 +37,7 @@ class LDobleCircular
         void Descendente();   
         string Descendente2();
         string buscar(string nick, string password);
+        string dame_tokens(string nick, string password);
     private:
 };
 

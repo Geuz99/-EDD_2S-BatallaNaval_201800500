@@ -26,6 +26,7 @@ class ListaPrincipal
         void Ascendente();
         void Descendente();
         string Categorias();
+        string dameCategorias();
 
     private:
 };

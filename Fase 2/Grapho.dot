@@ -1,28 +1,17 @@
 digraph Grapho{
 node [style=filled, color=olivedrab2, fillcolor=aquamarine];
 i3[label = "3"];
-i6[label = "6"];
 i8[label = "8"];
 i1[label = "1"];
-i1[label = "1"];
-i9[label = "9"];
 i7[label = "7"];
-i7[label = "7"];
-i8[label = "8"];
 i5[label = "5"];
-i0[label = "0"];
-i6[label = "6"];
+i8[label = "8"];
 i3[label = "3"];
-i9[label = "9"];
 i5[label = "5"];
 i1[label = "1"];
 i9[label = "9"];
 i2[label = "2"];
-i2[label = "2"];
-i3[label = "3"];
-i1[label = "1"];
 i6[label = "6"];
 i2[label = "2"];
-i7[label = "7"];
-i3->i6->i8->i1->i1->i9->i7->i7->i8->i5->i0->i6->i3->i9->i5->i1->i9->i2->i2->i3->i1->i6->i2->i7->i0 
+i3->i8->i1->i7->i5->i8->i3->i5->i1->i9->i2->i6->i2->i0 
 }

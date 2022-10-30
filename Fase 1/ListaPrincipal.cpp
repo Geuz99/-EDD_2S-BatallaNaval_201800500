@@ -6,6 +6,18 @@
 
 using namespace std;
 
+string ListaPrincipal::dameCategorias(){
+    string categoria = "";
+    nodoprincipal*aux = Inicio;
+     while (aux != NULL) {
+        categoria = categoria + aux->valor + "\n";
+        aux = aux->sig;
+        
+     }
+     return categoria;
+}
+
+
 string ListaPrincipal::Categorias(){
     string categoria = "";
     nodoprincipal*aux = Inicio;

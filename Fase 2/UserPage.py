@@ -8,14 +8,18 @@ from PIL import ImageTk, Image
 import requests
 from Graph import Graph
 
+from eth_account import Account
+import secrets
+
 base_url = 'http://192.168.1.9:18080'
 
 
 class UserPage:
-    def __init__(self, window, user, password):
+    def __init__(self, window, user, password, tokens):
         self.window = window
         self.user = user
         self.password = password
+        self.monedas = tokens
         self.window.geometry('1116x718')
         self.window.resizable(0, 0)
         self.window.title('Profile: ' + user)
@@ -113,6 +117,8 @@ class UserPage:
         self.txt_tokens = 'Tokens Disponibles'
         self.tokens = Label(self.tienda_frame, text=self.txt_tokens, font=('Rockwell', 18), bg='#4d79ff',
                             fg='black')
+        self.tokens_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
+                                  font=('yu gothic ui', 14, 'bold'))  # add3f
 
         # LA TIENDA
         self.configfile_tienda = Text(self.window, wrap=WORD, font=("Comic Sans MS", 30, "bold"))
@@ -134,11 +140,17 @@ class UserPage:
         self.item_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
                                 font=('yu gothic ui', 14, 'bold'))
 
-        # BOTON EDITAR PERFIL
+        # BOTON COMPRAR (TIENDA)
         self.comprar_button = Button(self.tienda_frame, text='COMPRAR', bg='#00ff00', fg='red',
                                      font=('yu gothic ui', 12, 'bold'), width=15, height=4, bd=0, cursor="pirate",
                                      activebackground='#cc6600', command=self.editar)
-        self.comprar_button.place(x=65, y=200)
+
+
+        # BOTON WALLET (STORE)
+        self.wallet_button = Button(self.tienda_frame, text='Wallet', bg='#1f7a7a', fg='#ffff00',
+                                     font=('yu gothic ui', 12, 'bold'), width=15, height=4, bd=0, cursor="pirate",
+                                     activebackground='#cc6600', command=self.wallet)
+
 
     def store(self):
         self.deletetuto()
@@ -152,6 +164,10 @@ class UserPage:
         self.tokens = Label(self.tienda_frame, text=self.txt_tokens, font=('Rockwell', 18), bg='#4d79ff',
                             fg='black')
         self.tokens.place(x=810, y=0, width=230, height=35)
+        self.tokens_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
+                                  font=('yu gothic ui', 14, 'bold'))  # add3f
+        self.tokens_entry.insert(0, self.monedas)
+        self.tokens_entry.place(x=720, y=0, width=75, height=35) # add3f
         self.configfile_tienda = Text(self.window, wrap=WORD, font=("Trajan", 16), bg='#809fff', fg='white')
         self.configfile_tienda.place(x=480, y=110, width=990, height=520)
         self.categoria = Label(self.tienda_frame, text=self.txt_categoria, font=('Rockwell', 13), bg='#4d79ff',
@@ -170,12 +186,31 @@ class UserPage:
                                      font=('yu gothic ui', 12, 'bold'), width=10, height=1, bd=0, cursor="pirate",
                                      activebackground='#cc6600', command=self.comprar)
         self.comprar_button.place(x=910, y=610)
+        self.wallet_button = Button(self.tienda_frame, text='Wallet', bg='#1f7a7a', fg='#ffff00',
+                                    font=('yu gothic ui', 12, 'bold'), width=10, height=1, bd=2, cursor="pirate",
+                                    activebackground='#cc6600', command=self.wallet)
+        self.wallet_button.place(x=21, y=4)
         res = requests.get(f'{base_url}/tienda')
         data = res.text
         with open('Tienda', 'w') as f:
             f.write(data)
         with open('Tienda', 'r') as f:
             self.configfile_tienda.insert(INSERT, f.read())
+
+    def wallet(self):
+        res = messagebox.askquestion("WALLET FREE USAC!", "Aun no cuentas con tu wallet?, deseas crear una?")
+        if res == 'yes':
+            priv = secrets.token_hex(32)
+            priv_key = "0x" + priv
+            print("Llave privada, no se de compartir.", priv_key)
+            acct = Account.from_key(priv_key)
+            print("From wallet:", acct.address)
+        elif res == 'no':
+            messagebox.showinfo("NO APOYAS AL PARO?", "OJO necesitaras una para realizar compras en esta plataforma")
+        else:
+            messagebox.showwarning('error', 'Occurrio un error al realizar esta accion!')
+
+
 
     def editar(self):
         self.deletetuto()
@@ -261,7 +296,6 @@ class UserPage:
         destructores = 3
         buques = 4
         colocacion(self.window, portaaviones, submarino, destructores, buques, m)
-
 
     def tablero2(self, m):
         portaaviones = 2
@@ -422,8 +456,8 @@ class Tablero:
         self.random_button.place(x=785, y=480)
 
         self.randomj2_button = Button(self.window, text='Random', bg='#33cc33', fg='black',
-                                     font=('yu gothic ui', 12, 'bold'), width=10, height=3, bd=0, cursor="pirate",
-                                     activebackground='#3847ff', command=self.randomxy)
+                                      font=('yu gothic ui', 12, 'bold'), width=10, height=3, bd=0, cursor="pirate",
+                                      activebackground='#3847ff', command=self.randomxy)
 
         # LABELS DE PUNTUACION JVJ
         self.pointsj1_label = Label(self.window, text='Puntos', bg='#1f7a7a', fg='white',
@@ -435,18 +469,18 @@ class Tablero:
         self.pointsj1_entry.insert(0, 0)
 
         self.acertadosj1_label = Label(self.window, text='Acertados', bg='#009933', fg='white',
-                                    font=('yu gothic ui', 10, 'bold'))
+                                       font=('yu gothic ui', 10, 'bold'))
         self.acertadosj1_label.place(x=25, y=180)
         self.acertadosj1_entry = Entry(self.window, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
-                                    font=('yu gothic ui', 14, 'bold'), justify='center')
+                                       font=('yu gothic ui', 14, 'bold'), justify='center')
         self.acertadosj1_entry.place(x=30, y=230, width=50, height=36)
         self.acertadosj1_entry.insert(0, 0)
 
         self.noacertadosj1_label = Label(self.window, text='No Acertados', bg='#e60000', fg='white',
-                                       font=('yu gothic ui', 10, 'bold'))
+                                         font=('yu gothic ui', 10, 'bold'))
         self.noacertadosj1_label.place(x=20, y=290)
         self.noacertadosj1_entry = Entry(self.window, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
-                                       font=('yu gothic ui', 14, 'bold'), justify='center')
+                                         font=('yu gothic ui', 14, 'bold'), justify='center')
         self.noacertadosj1_entry.place(x=30, y=340, width=50, height=36)
         self.noacertadosj1_entry.insert(0, 0)
 
@@ -674,14 +708,15 @@ class Tablero:
         self.graph.add_edge(1, 8)
         self.graph.add_edge(2, 7)
         self.graph.add_edge(3, 5)
-        self.graph.add_edge(3, 8)
+        self.graph.add_edge(4, 3)
+        self.graph.add_edge(4, 8)
         self.graph.add_edge(6, 1)
         self.graph.add_edge(6, 5)
         self.graph.add_edge(7, 2)
         self.graph.add_edge(7, 9)
         self.graph.add_edge(9, 2)
         self.graph.add_edge(9, 6)
-        self.graph.showGraph()
+        self.graph.print_agraph()
 
     def who_start(self):
         comienza = random.randint(0, 1)
@@ -706,7 +741,7 @@ class Tablero:
                     self.pointsj1 = self.pointsj1 - 1
                     self.pointsj1_entry.delete(0, 'end')
                     self.pointsj1_entry.insert(0, self.pointsj1)
-           # elif self.btnlista2[x - 1][y - 1].cget('bg') == "black":
+            # elif self.btnlista2[x - 1][y - 1].cget('bg') == "black":
             #    messagebox.showerror("Error Jugador 1", "Ya haz colocado esta posicion")
             else:
                 self.btnlista2[x - 1][y - 1].config(bg="black")
@@ -744,7 +779,7 @@ class Tablero:
                     self.pointsj2 = self.pointsj2 - 1
                     self.pointsj2_entry.delete(0, 'end')
                     self.pointsj2_entry.insert(0, self.pointsj2)
-           # elif self.btnlista[x - 1][y - 1].cget('bg') == "black":
+            # elif self.btnlista[x - 1][y - 1].cget('bg') == "black":
             #    messagebox.showerror("Error Jugador 2", "Ya haz colocado esta posicion")
             else:
                 messagebox.showinfo("OJO Jugador 2", "LE HAZ DADO A ALGUN BARCO")
@@ -1090,12 +1125,12 @@ class Reportes:
 
         # BOTONES DE REPORTES
         self.lista_button = Button(self.window, text='Mostrar Lista', bg='#66ff66', fg='black',
-                                     font=('yu gothic ui', 12, 'bold'), width=25, height=8, bd=0, cursor="pirate",
-                                     activebackground='#3847ff', command=self.graphoLista)
+                                   font=('yu gothic ui', 12, 'bold'), width=25, height=8, bd=0, cursor="pirate",
+                                   activebackground='#3847ff', command=self.graphoLista)
         self.lista_button.place(x=50, y=75)
         self.grapho_button = Button(self.window, text='Mostrar Grafo', bg='#ffcc66', fg='black',
-                                   font=('yu gothic ui', 12, 'bold'), width=25, height=8, bd=0, cursor="pirate",
-                                   activebackground='#3847ff', command=self.grapho)
+                                    font=('yu gothic ui', 12, 'bold'), width=25, height=8, bd=0, cursor="pirate",
+                                    activebackground='#3847ff', command=self.grapho)
         self.grapho_button.place(x=420, y=75)
 
     def graphoLista(self):

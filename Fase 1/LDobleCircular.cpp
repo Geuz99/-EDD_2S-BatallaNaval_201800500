@@ -106,6 +106,26 @@ string LDobleCircular::buscar(string nick, string password){
     return "found";
 }
 
+string LDobleCircular::dame_tokens(string nick, string password){
+    NodoLDobleCircular *buscar;
+    string tokens = "";
+    buscar = head;
+    bool flag = false;
+    if(head!=NULL){
+        do{
+            if(buscar->nick==nick && buscar->password==password){
+                flag = true;  
+                tokens = buscar->monedas;             
+            }
+            buscar = buscar->next;
+        }while(buscar!=head && flag!=true);
+        if(!flag){
+            return "not found";
+        }
+    }        
+    return tokens;
+}
+
 void LDobleCircular::buscar(string nick, string password, Cola colaTuto, ListaPrincipal listaArticulos, Pila pilaMov){
     int opc = 0;
     NodoLDobleCircular *buscar;
