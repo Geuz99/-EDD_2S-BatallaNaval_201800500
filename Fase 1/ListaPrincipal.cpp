@@ -17,6 +17,72 @@ string ListaPrincipal::dameCategorias(){
      return categoria;
 }
 
+string ListaPrincipal::buscar(string categoria, string item) {
+    nodoprincipal*aux = Inicio;
+    bool flag = false;
+    while (aux != NULL) {
+        if(categoria == aux->valor){
+            nodointerno * auxI = aux->listainterna.Inicio;
+            while (auxI != NULL) {
+                if(item == auxI->nombre){
+                    flag = true;
+                }
+            auxI = auxI->sig;
+            }
+        } 
+        aux = aux->sig;
+    }
+    if(!flag){
+            return "not found";
+    }
+    return "found";
+}
+
+string ListaPrincipal::dame_precio(string categoria, string item) {
+    nodoprincipal*aux = Inicio;
+    bool flag = false;
+    string price = "";
+    while (aux != NULL) {
+        if(categoria == aux->valor){
+            nodointerno * auxI = aux->listainterna.Inicio;
+            while (auxI != NULL) {
+                if(item == auxI->nombre){
+                    flag = true;
+                    price = auxI->precio;
+                }
+            auxI = auxI->sig;
+            }
+        } 
+        aux = aux->sig;
+    }
+    if(!flag){
+            return "not found";
+    }
+    return price;
+}
+
+string ListaPrincipal::dame_id(string categoria, string item) {
+    nodoprincipal*aux = Inicio;
+    bool flag = false;
+    string id = "";
+    while (aux != NULL) {
+        if(categoria == aux->valor){
+            nodointerno * auxI = aux->listainterna.Inicio;
+            while (auxI != NULL) {
+                if(item == auxI->nombre){
+                    flag = true;
+                    id = auxI->id;
+                }
+            auxI = auxI->sig;
+            }
+        } 
+        aux = aux->sig;
+    }
+    if(!flag){
+            return "not found";
+    }
+    return id;
+}
 
 string ListaPrincipal::Categorias(){
     string categoria = "";

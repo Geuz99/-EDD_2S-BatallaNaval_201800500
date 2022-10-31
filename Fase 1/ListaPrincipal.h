@@ -27,6 +27,9 @@ class ListaPrincipal
         void Descendente();
         string Categorias();
         string dameCategorias();
+        string buscar(string categoria, string item);
+        string dame_precio(string categoria, string item);
+        string dame_id(string categoria, string item);
 
     private:
 };

@@ -11,6 +11,9 @@ from Graph import Graph
 from eth_account import Account
 import secrets
 
+from ArbolMerkle import ArbolMerkle
+from TablaHash import hash_table
+
 base_url = 'http://192.168.1.9:18080'
 
 
@@ -20,6 +23,10 @@ class UserPage:
         self.user = user
         self.password = password
         self.monedas = tokens
+        self.priv_key = "0x"
+        self.itemsadd = 0
+        self.totalprice = 0
+        self.items = hash_table()
         self.window.geometry('1116x718')
         self.window.resizable(0, 0)
         self.window.title('Profile: ' + user)
@@ -117,7 +124,7 @@ class UserPage:
         self.txt_tokens = 'Tokens Disponibles'
         self.tokens = Label(self.tienda_frame, text=self.txt_tokens, font=('Rockwell', 18), bg='#4d79ff',
                             fg='black')
-        self.tokens_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
+        self.tokens_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#4d79ff', fg='black',
                                   font=('yu gothic ui', 14, 'bold'))  # add3f
 
         # LA TIENDA
@@ -141,16 +148,38 @@ class UserPage:
                                 font=('yu gothic ui', 14, 'bold'))
 
         # BOTON COMPRAR (TIENDA)
-        self.comprar_button = Button(self.tienda_frame, text='COMPRAR', bg='#00ff00', fg='red',
+        self.carrito_button = Button(self.tienda_frame, text='Añadir al carrito', bg='#00ff00', fg='red',
                                      font=('yu gothic ui', 12, 'bold'), width=15, height=4, bd=0, cursor="pirate",
-                                     activebackground='#cc6600', command=self.editar)
+                                     activebackground='#cc6600', command=self.addCarrito)
 
 
         # BOTON WALLET (STORE)
         self.wallet_button = Button(self.tienda_frame, text='Wallet', bg='#1f7a7a', fg='#ffff00',
                                      font=('yu gothic ui', 12, 'bold'), width=15, height=4, bd=0, cursor="pirate",
                                      activebackground='#cc6600', command=self.wallet)
+        self.l_image = Image.open('Imagenes\\carro.png')
+        photo2 = ImageTk.PhotoImage(self.l_image)
+        self.l_image_label = Label(self.tienda_frame, image=photo2, bg='#809fff')
+        self.l_image_label.image = photo2
+        self.l_image_label.place(x=195, y=90)
 
+        self.carrito = Button(self.l_image_label, bg='#3047ff', fg='white',
+                            font=('yu gothic ui', 12, 'bold'), width=25, bd=0, cursor='hand2',
+                            activebackground='#3847ff', command=self.verCarrito)
+        self.carrito.place(relx=0.5, rely=0.5, anchor=CENTER)
+
+        self.itemsadd_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='red',
+                                  font=('yu gothic ui', 15, 'bold'))  # add3f
+
+        self.txt_total = 'Total:'
+        self.totalprecio = Label(self.tienda_frame, text=self.txt_total, font=('Rockwell', 16), bg='#4d79ff',
+                            fg='black')
+        self.itemstotal_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#4d79ff', fg='red',
+                                      font=('yu gothic ui', 15))  # add3f
+
+        self.vercarrito_button = Button(self.tienda_frame, text='Ver', bg='#999966', fg='white',
+                                     font=('yu gothic ui', 12, 'bold'), width=13, height=1, bd=2, cursor="pirate",
+                                     activebackground='#cc6600', command=self.verCarrito)
 
     def store(self):
         self.deletetuto()
@@ -164,7 +193,7 @@ class UserPage:
         self.tokens = Label(self.tienda_frame, text=self.txt_tokens, font=('Rockwell', 18), bg='#4d79ff',
                             fg='black')
         self.tokens.place(x=810, y=0, width=230, height=35)
-        self.tokens_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='black',
+        self.tokens_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#4d79ff', fg='black',
                                   font=('yu gothic ui', 14, 'bold'))  # add3f
         self.tokens_entry.insert(0, self.monedas)
         self.tokens_entry.place(x=720, y=0, width=75, height=35) # add3f
@@ -182,14 +211,35 @@ class UserPage:
         self.item_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#1f7a7a', fg='white',
                                 font=('yu gothic ui', 14, 'bold'))
         self.item_entry.place(x=650, y=610)
-        self.comprar_button = Button(self.tienda_frame, text='COMPRAR', bg='#00ff00', fg='red',
-                                     font=('yu gothic ui', 12, 'bold'), width=10, height=1, bd=0, cursor="pirate",
-                                     activebackground='#cc6600', command=self.comprar)
-        self.comprar_button.place(x=910, y=610)
+        self.carrito_button = Button(self.tienda_frame, text='Añadir al carrito', bg='#00ff00', fg='red',
+                                     font=('yu gothic ui', 12, 'bold'), width=13, height=1, bd=2, cursor="pirate",
+                                     activebackground='#cc6600', command=self.addCarrito)
+        self.carrito_button.place(x=910, y=610)
         self.wallet_button = Button(self.tienda_frame, text='Wallet', bg='#1f7a7a', fg='#ffff00',
                                     font=('yu gothic ui', 12, 'bold'), width=10, height=1, bd=2, cursor="pirate",
                                     activebackground='#cc6600', command=self.wallet)
         self.wallet_button.place(x=21, y=4)
+        self.l_image = Image.open('Imagenes\\carro.png')
+        photo2 = ImageTk.PhotoImage(self.l_image)
+        self.l_image_label = Label(self.tienda_frame, image=photo2, bg='#4d79ff')
+        self.l_image_label.image = photo2
+        self.l_image_label.place(x=130, y=8)
+        self.itemsadd_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#4d79ff', fg='red',
+                                    font=('yu gothic ui', 10, 'bold'))  # add3f
+        self.itemsadd_entry.insert(0, self.itemsadd)
+        self.itemsadd_entry.place(x=155, y=8, width=20, height=12)  # add3f
+        self.totalprecio = Label(self.tienda_frame, text=self.txt_total, font=('Rockwell', 16), bg='#4d79ff',
+                                 fg='#ccccb3')
+        self.totalprecio.place(x=170, y=10, width=75, height=35)
+        self.itemstotal_entry = Entry(self.tienda_frame, highlightthickness=0, relief=FLAT, bg='#4d79ff', fg='red',
+                                    font=('yu gothic ui', 15))  # add3f
+        self.itemstotal_entry.insert(0, self.totalprice)
+        self.itemstotal_entry.place(x=240, y=13, width=125, height=25)  # add3f
+        self.vercarrito_button = Button(self.tienda_frame, text='Ver', bg='#4d79ff', fg='white',
+                                        font=('yu gothic ui', 7), width=3, height=0, bd=0, cursor="pirate",
+                                        activebackground='#cc6600', command=self.verCarrito)
+        self.vercarrito_button.place(x=136, y=35)
+
         res = requests.get(f'{base_url}/tienda')
         data = res.text
         with open('Tienda', 'w') as f:
@@ -197,19 +247,53 @@ class UserPage:
         with open('Tienda', 'r') as f:
             self.configfile_tienda.insert(INSERT, f.read())
 
+    def verCarrito(self):
+        print(self.items.table)
+
+    def addCarrito(self):
+        categoria = self.categoria_entry.get()
+        nombre = self.item_entry.get()
+        res = requests.get(f'{base_url}/tienda/' + categoria + '/' + nombre)
+        data = res.text
+        if data == 'correcto':
+            res_price = requests.get(f'{base_url}/tienda/precio/' + categoria + '/' + nombre)
+            price = res_price.text
+            res_id = requests.get(f'{base_url}/tienda/id/' + categoria + '/' + nombre)
+            id = res_id.text
+            self.items.insertData(int(id), nombre)
+            self.totalprice = self.totalprice + int(price)
+            self.itemsadd = self.itemsadd + 1
+            self.itemsadd_entry.delete(0, 'end')
+            self.itemsadd_entry.insert(0, self.itemsadd)
+            self.itemstotal_entry.delete(0, 'end')
+            self.itemstotal_entry.insert(0, self.totalprice)
+        else:
+            messagebox.showwarning("ERROR", "Categoria / item invailido")
+
     def wallet(self):
-        res = messagebox.askquestion("WALLET FREE USAC!", "Aun no cuentas con tu wallet?, deseas crear una?")
+        res = messagebox.askquestion("WALLET FREE USAC!", "Deseas crear una wallet para realizar compras en nuestra "
+                                                          "plataforma?")
         if res == 'yes':
             priv = secrets.token_hex(32)
-            priv_key = "0x" + priv
-            print("Llave privada, no se de compartir.", priv_key)
-            acct = Account.from_key(priv_key)
-            print("From wallet:", acct.address)
+            self.priv_key = self.priv_key + priv
+            messagebox.showinfo("Succesfull", "Llave privada, no lo compartas con nadie. " + self.priv_key)
+            acct = Account.from_key(self.priv_key)
+            # print("From wallet:", acct.address)
+            # self.mixmerkletree()
         elif res == 'no':
             messagebox.showinfo("NO APOYAS AL PARO?", "OJO necesitaras una para realizar compras en esta plataforma")
         else:
             messagebox.showwarning('error', 'Occurrio un error al realizar esta accion!')
 
+    def mixmerkletree(self) -> None:
+        elems = ["Mix", "Merkle", "Tree", "From", "Onur Atakan ULUSOY", "https://github.com/onuratakan/mixmerkletree",
+                 "GO"]
+        print("Inputs: ")
+        print(*elems, sep=" | ")
+        print("")
+        mtree = ArbolMerkle(elems)
+        print("Root Hash: " + mtree.getRootHash() + "\n")
+        print(mtree.printTree())
 
 
     def editar(self):
@@ -320,7 +404,7 @@ class UserPage:
         self.nombre.destroy()
         self.categoria_entry.destroy()
         self.item_entry.destroy()
-        self.comprar_button.destroy()
+        self.carrito_button.destroy()
 
     def deletetuto(self):
         self.heading.destroy()

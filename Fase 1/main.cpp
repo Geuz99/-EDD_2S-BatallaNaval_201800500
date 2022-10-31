@@ -107,6 +107,22 @@ int main(int argc, char const *argv[])
         return data;
     });
 
+    CROW_ROUTE(app, "/tienda/<string>/<string>")([](string categoria, string item){    
+        if (listaArticulos.buscar(categoria, item) == "found"){
+            return "correcto";
+        }else{
+            return "incorrecto";
+        }
+    });
+
+    CROW_ROUTE(app, "/tienda/precio/<string>/<string>")([](string categoria, string item){    
+        return listaArticulos.dame_precio(categoria, item);
+    });
+
+    CROW_ROUTE(app, "/tienda/id/<string>/<string>")([](string categoria, string item){    
+        return listaArticulos.dame_id(categoria, item);
+    });
+
     app.port(18080).run();    
 
 
